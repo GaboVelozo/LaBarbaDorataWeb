@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Turno - La Barba Dorata</title>
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" type="text/css" href="/css/jquery.datetimepicker.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" href="/images/logo_barba-icono.ico" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/js/jquery.datetimepicker.full.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/turnosScript.js"></script>
+
+<body>
+    <header class="header">
+
+        <div class="content-hamb">
+            <div class="menu-hamb container-hamb">
+                <a href="index.html" class="logo-hamb animate__heartBeat"><img src="/images/logo_barba.png"
+                        alt="logo-barba-dorata" /></a>
+                <input type="checkbox" id="menu-hamb" />
+                <label for="menu-hamb">
+                    <img src="/images/menu.png" class="menu-icono" alt="icono">
+                </label>
+                <nav class="navbar-hamb">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="Galeria.html">Galería</a></li>
+                        <li><a href="AcercaDe.html">Acerca de</a></li>
+                        <li><a href="Contacto.html">Contacto</a></li>
+                        <li>
+                            <a href="AltaTurno.html">
+                                <button type="button" class="btn btn-primary"
+                                    style="background-color: #FFD700; color: black; margin-top: -10px;">
+                                    TURNOS
+                                </button>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+
+    </header>
+
+    <div class="flex-container">
+
+        <section id="contact-section" class="item2">
+            <h2>Modificar Turno</h2>
+
+            <form id="form-obtener-turno">
+                <label for="codigo">Codigo del turno:</label>
+                <input type="text" id="codigo" required><br>
+                <button type="submit">Modificar Turno</button>
+            </form>
+            <br><br>
+            <div id="datos-turno" style="display: none;">
+                <form id="form-guardar-cambios">
+                    <label for="nombreModificar">Nombre:</label>
+                    <input type="text" id="nombreModificar" name="nombreModificar" placeholder="Ingrese su nombre">
+                    <div id="NombreError" class="errorDiv" hidden>Por favor ingrese su nombre de al menos 3 letras</div>
+
+                    <label for="apellidoModificar">Apellido:</label>
+                    <input type="text" id="apellidoModificar" name="apellidoModificar"
+                        placeholder="Ingrese su apellido">
+                    <div id="ApellidoError" class="errorDiv"></div>
+
+                    <label for="emailModificar">Correo Electrónico:</label>
+                    <input type="email" id="emailModificar" name="emailModificar" placeholder="Ingrese su email">
+                    <div id="EmailError" class="errorDiv"></div>
+
+                    <label for="telefonoModificar">Telefono:</label>
+                    <input type="tel" id="telefonoModificar" name="telefonoModificar"
+                        placeholder="Ingrese su número de teléfono ">
+                    <div id="TelError" class="errorDiv"></div>
+
+                    <label for="mensajeModificar">Mensaje:</label>
+                    <textarea id="mensajeModificar" name="mensajeModificar" rows="4"
+                        placeholder="Contanos de vos y qué te gustaría que logremos con tu pelo"></textarea>
+                    <div id="MensajeError" class="errorDiv"></div>
+                    <div>
+                        <label for="selectClienteModificar" style="display: inline-block;">Sos cliente nuevo?</label>
+
+                        <select name="cliente" id="selectClienteModificar"
+                            style="display: inline-block; font-size: 100%;; margin-left: 10px;">
+                            <option value="si">Si</option>
+                            <option value="no">No</option>
+                        </select>
+
+                    </div>
+                    <br>
+
+                    <label for="datetimepickerModificar">Turno</label>
+                    <input id="datetimepickerModificar" name="datetimepickerModificar" type="text"
+                        style="background-color: #FFD700; font-weight: bold; width: 30%;"
+                        placeholder="Click aqui para seleccionar un turno" readonly>
+
+                        <br><br><br>
+                        <!-- Imagen actual del producto - Debe comentarse al subirse al servidor-->
+                        <img id="imagen-actual" style="max-width: 200px; display: none;">
+                        <!-- Vista previa de la nueva imagen seleccionada -->
+                        <img id="imagen-vista-previa" style="max-width: 200px; display: none;">
+
+                        <!-- Input para nueva imagen -->
+                        <label for="nuevaImagen">Nueva Imagen:</label>
+                        <input type="file" id="nuevaImagen"><br>
+
+                        <br><br>
+                        <button type="submit">Guardar Cambios</button>
+                        <a href="modificarTurno.html">Cancelar</a>
+                </form>
+            </div>
+        </section>
+        <section id="contact-info" class="item1">
+            <h2>ACÁ PODÉS ENCONTRARNOS</h2>
+            <p>Dirección: Calle 1 123, La Plata, Buenos Aires, 1900</p>
+            <p>Teléfono: (123) 456-7890</p>
+            <p>Correo Electrónico: info@LaBarbaDorata.com.ar</p>
+        </section>
+    </div>
+
+
+
+    <footer class="footer">
+        <ul class="social-icon">
+            <li class="icon-elem">
+                <a href="https://www.instagram.com/" target="_blank" class="icon">
+                    <i class="fa-brands fa-instagram fa-2xl"></i>
+                </a>
+            </li>
+
+            <li class="icon-elem">
+                <a href="https://www.facebook.com/" target="_blank" class="icon">
+                    <i class="fa-brands fa-square-facebook fa-2xl"></i>
+                </a>
+            </li>
+
+            <li class="icon-elem">
+                <a href="https://www.tiktok.com/es/" target="_blank" class="icon">
+                    <i class="fa-brands fa-tiktok fa-2xl"></i>
+                </a>
+            </li>
+
+            <li class="icon-elem">
+                <a href="https://web.whatsapp.com/" target="_blank" class="icon">
+                    <i class="fa-brands fa-whatsapp fa-2xl"></i>
+                </a>
+            </li>
+        </ul>
+
+        <div class="derechos">
+            <p>&copy; 2024 La Barba Dorata. Todos los derechos reservados.</p>
+        </div>
+
+    </footer>
+
+
+
+</body>
+
+
+</html>
+
+<script>
+    jQuery.datetimepicker.setLocale('es');
+    //especifico fecha  maxima que puede tomar el datetimepicker
+    var maxDateDTP = new Date();
+    maxDateDTP.setDate(maxDateDTP.getDate() + 14);
+    //alert(maxDateDTP);
+    jQuery('#datetimepickerModificar').datetimepicker({
+        onGenerate: function (ct) {
+            jQuery(this).find('.xdsoft_date.xdsoft_weekend')
+                .addClass('xdsoft_disabled');
+        },
+        onSelectDate: function (ct, $i) {
+            alert('Seleccione un horario')
+        },
+        defaultDate: new Date(),
+        defaultTime: '09:00',
+        minDate: 0,
+        maxDate: maxDateDTP,
+        inline: true,
+        // week: 'true',
+        allowTimes: [
+            '9:00', '9:30',
+            '10:00', '10:30',
+            '11:00', '11:30',
+            '12:00', '12:30',
+            '13:00', '13:30',
+            '14:00', '14:30',
+            '15:00', '15:30',
+            '16:00', '16:30',
+            '17:00', '17:30',
+            '18:00', '18:30',
+            '19:00', '19:30',
+            '20:00', '20:30',
+        ]
+    });
+</script>
+
+<script>
+    // const URL = "http://127.0.0.1:5000/"
+    const URL = "http://127.0.0.1:5000/"
+
+
+    // Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
+    //const URL = "https://USUARIO.pythonanywhere.com/"
+
+    // Variables de estado para controlar la visibilidad y los datos del formulario
+    let turnoId = '';
+    let nombre = '';
+    let apellido = '';
+    let email = '';
+    let telefono = '';
+    let mensaje = '';
+    let fecha = '';
+
+    let imagen_url = '';
+    let imagenSeleccionada = null;
+    let imagenUrlTemp = null;
+    let mostrarDatosTurno = false;
+
+    document.getElementById('form-obtener-turno').addEventListener('submit', obtenerTurno);
+    document.getElementById('form-guardar-cambios').addEventListener('submit', guardarCambios);
+    document.getElementById('nuevaImagen').addEventListener('change', seleccionarImagen);
+
+    // Se ejecuta cuando se envía el formulario de consulta. Realiza una solicitud GET a la API y obtiene los datos del producto correspondiente al código ingresado.
+    function obtenerTurno(event) {
+        event.preventDefault();
+        turnoId = document.getElementById('codigo').value;
+        fetch(URL + 'turnos/' + turnoId)
+            .then(response => {
+                if (response.ok) {
+                    return response.json()
+                } else {
+                    throw new Error('Error al obtener los datos del turno.')
+                }
+            })
+            .then(data => {
+                nombre = data.Nombre;
+                apellido = data.Apellido;
+                telefono = data.Telefono;
+                email = data.Email;
+                mensaje = data.Mensaje;
+                fecha = data.FechaHora;
+                imagen_url = data.Imagen_url;
+                mostrarDatosTurno = true; //Activa la vista del segundo formulario
+                mostrarFormulario();
+            })
+            .catch(error => {
+                alert('Id de turno no encontrado.');
+            });
+    }
+
+    // Muestra el formulario con los datos del producto
+    function mostrarFormulario() {
+        if (mostrarDatosTurno) {
+            document.getElementById('nombreModificar').value = nombre;
+            document.getElementById('apellidoModificar').value = apellido;
+            document.getElementById('emailModificar').value = email;
+            document.getElementById('telefonoModificar').value = telefono;
+            
+            const date = new Date(fecha);
+            // Formatear la fecha
+            const year = date.getUTCFullYear();
+            const month = String(date.getUTCMonth() + 1).padStart(2, '0'); // Los meses son de 0 a 11
+            const day = String(date.getUTCDate()).padStart(2, '0');
+            const hours = String(date.getUTCHours()).padStart(2, '0');
+            const minutes = String(date.getUTCMinutes()).padStart(2, '0');
+            const seconds = String(date.getUTCSeconds()).padStart(2, '0');
+            $('#datetimepickerModificar').datetimepicker('setOptions', {value: new Date(fecha)})
+            document.getElementById('mensajeModificar').value = mensaje;
+
+            const imagenActual = document.getElementById('imagen-actual');
+            if (imagen_url && !imagenSeleccionada) { // Verifica si imagen_url no está vacía y no se ha seleccionado una imagen
+
+                imagenActual.src = URL + 'static/imagenes/' + imagen_url;
+
+                //  imagenActual.src = 'https://www.pythonanywhere.com/user/juanpablocodo/files/home/juanpablocodo/mysite/static/imagenes/' + imagen_url;                    
+                //Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
+                //imagenActual.src = 'https://www.pythonanywhere.com/user/USUARIO/files/home/USUARIO/mysite/static/imagenes/' + imagen_url;
+                imagenActual.style.display = 'block'; // Muestra la imagen actual
+            } else {
+                imagenActual.style.display = 'none'; // Oculta la imagen si no hay URL
+            }
+
+            document.getElementById('datos-turno').style.display = 'block';
+        } else {
+            document.getElementById('datos-turno').style.display = 'none';
+        }
+    }
+
+    // Se activa cuando el usuario selecciona una imagen para cargar.
+    function seleccionarImagen(event) {
+        const file = event.target.files[0];
+        imagenSeleccionada = file;
+        imagenUrlTemp = URL.createObjectURL(file); // Crea una URL temporal para la vista previa
+
+        const imagenVistaPrevia = document.getElementById('imagen-vista-previa');
+        imagenVistaPrevia.src = imagenUrlTemp;
+        imagenVistaPrevia.style.display = 'block';
+    }
+
+    // Se usa para enviar los datos modificados del producto al servidor.
+    function guardarCambios(event) {
+        event.preventDefault();
+
+        const formData = new FormData();
+        formData.append('turnoId', turnoId);
+        formData.append('nombre', document.getElementById('nombreModificar').value);
+        formData.append('apellido', document.getElementById('apellidoModificar').value);
+        formData.append('email', document.getElementById('emailModificar').value);
+        formData.append('telefono', document.getElementById('telefonoModificar').value);
+        formData.append('mensaje', document.getElementById('mensajeModificar').value);
+        
+        const dateStr = new Date($('#datetimepickerModificar').val());
+        const date = new Date(dateStr);
+        // Formatear la fecha
+        const year = date.getUTCFullYear();
+        const month = String(date.getUTCMonth() + 1).padStart(2, '0'); // Los meses son de 0 a 11
+        const day = String(date.getUTCDate()).padStart(2, '0');
+        const hours = String(date.getUTCHours()).padStart(2, '0');
+        const minutes = String(date.getUTCMinutes()).padStart(2, '0');
+        const seconds = String(date.getUTCSeconds()).padStart(2, '0');
+        
+
+        const formattedDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+        formData.append('fecha', $('#datetimepickerModificar').datetimepicker('getValue'));
+        //$('#datetimepickerModificar').datetimepicker('getValue');
+        // Si se ha seleccionado una imagen nueva, la añade al formData. 
+        if (imagenSeleccionada) {
+            formData.append('imagen', imagenSeleccionada, imagenSeleccionada.name);
+        }
+
+        fetch(URL + 'turnos/' + turnoId, {
+            method: 'PUT',
+            body: formData,
+        })
+            .then(response => {
+                if (response.ok) {
+                    return response.json()
+                } else {
+                    throw new Error('Error al guardar los cambios del turno.')
+                }
+            })
+            .then(data => {
+                alert('Turno actualizado correctamente.');
+                limpiarFormulario();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error al actualizar el turno.');
+            });
+    }
+
+    // Restablece todas las variables relacionadas con el formulario a sus valores iniciales, lo que efectivamente "limpia" el formulario.
+    function limpiarFormulario() {
+        document.getElementById('nombreModificar').value = '';
+        document.getElementById('apellidoModificar').value = '';
+        document.getElementById('emailModificar').value = '';
+        document.getElementById('telefonoModificar').value = '';
+        document.getElementById('datetimepickerModificar').value = '';
+        document.getElementById('mensajeModificar').value = '';
+
+        const imagenActual = document.getElementById('imagen-actual');
+        imagenActual.style.display = 'none';
+
+        const imagenVistaPrevia = document.getElementById('imagen-vista-previa');
+        imagenVistaPrevia.style.display = 'none';
+
+        turnoId = '';
+        nombre = '';
+        apellido = '';
+        email = '';
+        telefono = '';
+        mensaje = '';
+        imagen_url = '';
+        imagenSeleccionada = null;
+        imagenUrlTemp = null;
+        mostrarDatosTurno = false;
+
+        document.getElementById('datos-turno').style.display = 'none';
+    }
+</script>
