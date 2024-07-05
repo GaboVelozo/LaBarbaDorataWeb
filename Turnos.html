@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería - La Barba Dorata</title>
+    <title>Servicios - La Barba Dorata</title>
+    <!-- https://fontawesome.com -->
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -47,47 +48,43 @@
         </div>
 
     </header>
-    <section id="divCortes" class="galeria">
-        <h2>Cortes y recortes</h2>
 
-        <div class="grid-container">
-            <div class="grid-item tall" style="background-image: url('images/Galeria/Cortes/5.jpg');"></div>
-            <div class="grid-item" style="background-image: url('images/Galeria/Cortes/2.jpg');"></div>
-            <div class="grid-item " style="background-image: url('images/Galeria/Cortes/3.jpg');"></div>
-            <div class="grid-item tall wide " style="background-image: url('images/Galeria/Cortes/4.jpg');"></div>
-            <div class="grid-item tall" style="background-image: url('images/Galeria/Cortes/6.jpg');"></div>
-            <div class="grid-item " style="background-image: url('images/Galeria/Cortes/7.jpg');"></div>
-            <div class="grid-item " style="background-image: url('images/Galeria/Cortes/8.jpg');"></div>
-        </div>
+    <section>
+        <h2 style="text-align: center">Gestión de Turnos</h2>
+        <ul class="turnos-list">
+            <li>
+                <a href="AltaTurno.html">
+                    <button type="button" class="btn btn-primary">
+                        Alta de Turnos
+                    </button>
+                </a>
+            </li>
+            <br>
+            <li>
+                <a href="modificarTurno.html">
+                    <button type="button" class="btn btn-primary">
+                        Modificacion de Turnos
+                    </button>
+                </a>
+            </li>
+            <br>
+            <li>
+                <a href="listadoEliminar.html">
+                    <button type="button" class="btn btn-primary">
+                        Eliminar Turnos
+                    </button>
+                </a>
+            </li>
+            <br>
+            <li>
+                <a href="listado.html">
+                    <button type="button" class="btn btn-primary">
+                        Listar Turnos
+                    </button>
+                </a>
+            </li>
+        </ul>
     </section>
-    <div id="divBarba" class="galeria">
-        <h2>Barba y afeitado</h2>
-        <div class="grid-container">
-            <div class="grid-item tall" style="background-image: url('images/Galeria/Barba/1.jpg');"></div>
-            <div class="grid-item" style="background-image: url('images/Galeria/Barba/2.jpeg');"></div>
-            <div class="grid-item tall wide" style="background-image: url('images/Galeria/Barba/6.jpeg');"></div>
-            <div class="grid-item" style="background-image: url('images/Galeria/Barba/3.jpeg');"></div>
-            <div class="grid-item" style="background-image: url('images/Galeria/Barba/4.jpeg');"></div>
-            <div class="grid-item" style="background-image: url('images/Galeria/Barba/5.jpeg');"></div>
-            <div class="grid-item" style="background-image: url('images/Galeria/Barba/8.jpeg');"></div>
-            <div class="grid-item" style="background-image: url('images/Galeria/Barba/9.webp');"></div>
-        </div>
-
-    </div>
-    <section id="divColoracion" class="galeria">
-        <h2>Coloración</h2>
-        <div class="grid-container">
-            <div class="grid-item tall" style="background-image: url('images/Galeria/Coloracion/4.jpeg');"></div>
-            <div class="grid-item wide tall" style="background-image: url('images/Galeria/Coloracion/3.jpeg');"></div>
-            <div class="grid-item tall" style="background-image: url('images/Galeria/Coloracion/5.jpeg');"></div>
-            <div class="grid-item tall" style="background-image: url('images/Galeria/Coloracion/6.jpeg');"></div>
-            <div class="grid-item tall" style="background-image: url('images/Galeria/Coloracion/1.jpeg');"></div>
-            <div class="grid-item tall" style="background-image: url('images/Galeria/Coloracion/2.jpeg');"></div>
-            <div class="grid-item tall" style="background-image: url('images/Galeria/Coloracion/7.jpeg');"></div>
-        </div>
-
-    </section>
-
 
     <footer class="footer">
         <ul class="social-icon">
@@ -122,5 +119,40 @@
 
     </footer>
 </body>
+
+<style>
+    .turnos-list {
+        max-width: 90%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #1d1a39;
+        border: 1px solid lightslategray;
+        border-radius: 5px;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+    }
+    .turnos-list li{
+        text-align: center;
+    }
+
+    .turnos-list button {
+        width: 40%;
+        padding: 8px;
+        margin: 4px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #FFD700; 
+        color: black; 
+        font-size: larger;
+        
+    }
+    .turnos-list button:hover {
+        background-color: #fafafa;
+        color: black;
+
+    }
+
+</style>
 
 </html>

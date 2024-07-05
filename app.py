@@ -113,11 +113,14 @@ class Turnos:
 #--------------------------------------------------------------------
 # Cuerpo del programa
 #--------------------------------------------------------------------
-# Crear una instancia de la clase Catalogo
+# Crear una instancia de la clase CatalogoCatalogo
 turnosCatalogo = Turnos(host='localhost', user='root', password='', database='miapp')
+# turnosCatalogo = Turnos(host='gabonline.mysql.pythonanywhere-services.com', 
+                        # user='gabonline', password='rootroot', database='gabonline$miapp')
 
 # Carpeta para guardar las imagenes
 ruta_destino = './static/imagenes/'
+# ruta_destino = '/home/gabonline/mysite/static/imagenes'
 
 @app.route("/turnos", methods=["GET"])
 def listar_turnos():

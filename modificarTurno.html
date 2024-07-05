@@ -15,7 +15,7 @@
     <script src="/js/jquery.datetimepicker.full.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/turnosScript.js"></script>
-
+</head>
 <body>
     <header class="header">
 
@@ -35,7 +35,7 @@
                         <li><a href="AcercaDe.html">Acerca de</a></li>
                         <li><a href="Contacto.html">Contacto</a></li>
                         <li>
-                            <a href="AltaTurno.html">
+                            <a href="Turnos.html">
                                 <button type="button" class="btn btn-primary"
                                     style="background-color: #FFD700; color: black; margin-top: -10px;">
                                     TURNOS
@@ -114,7 +114,7 @@
 
                         <br><br>
                         <button type="submit">Guardar Cambios</button>
-                        <a href="modificarTurno.html">Cancelar</a>
+                        <button id="btnCancelar"  onclick="history.back()" class="btn btn-secondary active" role="button">Cancelar</button>
                 </form>
             </div>
         </section>
@@ -207,7 +207,7 @@
 
 <script>
     // const URL = "http://127.0.0.1:5000/"
-    const URL = "http://127.0.0.1:5000/"
+    const URL = "http://gabonline.pythonanywhere.com/"
 
 
     // Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
@@ -275,7 +275,9 @@
             const hours = String(date.getUTCHours()).padStart(2, '0');
             const minutes = String(date.getUTCMinutes()).padStart(2, '0');
             const seconds = String(date.getUTCSeconds()).padStart(2, '0');
+
             $('#datetimepickerModificar').datetimepicker('setOptions', {value: new Date(fecha)})
+
             document.getElementById('mensajeModificar').value = mensaje;
 
             const imagenActual = document.getElementById('imagen-actual');
