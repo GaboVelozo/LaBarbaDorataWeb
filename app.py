@@ -214,13 +214,13 @@ def modificar_turno(turnoID):
     else:
         return jsonify({"mensaje": "Turno no encontrado"}), 403
 
-@app.route("/turnos/<int:codigo>", methods=["DELETE"])
+@app.route("/turnos/<int:turnoID>", methods=["DELETE"])
 def eliminar_turno(turnoID):
     # Primero, obtiene la información del turno para encontrar la imagen
     turno = turnosCatalogo.consultar_turno(turnoID)
     if turno:
         # Eliminar la imagen asociada si existe
-        ruta_imagen = os.path.join(ruta_destino, turno['imagen_url'])
+        ruta_imagen = os.path.join(ruta_destino, turno['Imagen_url'])
         if os.path.exists(ruta_imagen):
             os.remove(ruta_imagen)
 

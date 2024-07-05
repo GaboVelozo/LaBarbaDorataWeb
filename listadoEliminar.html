@@ -110,7 +110,7 @@
         </div>
 
     </footer>
-</body>
+
 <script>
     const URL = "http://127.0.0.1:5000/"
     // const URL = "http://gabonline.pythonanywhere.com/"
@@ -129,7 +129,7 @@
                 data.forEach(turno => {
                     const row = turnosTable.insertRow();
                     row.innerHTML = `
-                            <td>${turno.TurnosId}</td>
+                            <td>${turno.TurnoID}</td>
                             <td>${turno.Nombre}</td>
                             <td>${turno.Apellido}</td>
                             <td>${turno.Telefono}</td>
@@ -137,7 +137,7 @@
                             <td>${turno.FechaHora.toString()}</td>
                             <td align="center">${turno.Mensaje}</td>
                             <td><img src=./static/imagenes/${turno.Imagen_url} alt="Imagen del producto" style="width: 100px;"></td>
-                            <td><button onclick="eliminarTurno('${turno.TurnosId}')">Eliminar</button></td>
+                            <td><button onclick="eliminarTurno('${turno.TurnoID}')">Eliminar</button></td>
                         `;
                 });
             })
@@ -170,4 +170,5 @@
     // Cuando la página se carga, llama a obtenerTurnos para cargar la lista de turnos.
     document.addEventListener('DOMContentLoaded', obtenerTurnos);
 </script>
+</body>
 </html>
