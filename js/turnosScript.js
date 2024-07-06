@@ -1,8 +1,8 @@
 
 // LOCAL SETTINGS
-const URL = "http://127.0.0.1:5000/"
+// const URL = "http://127.0.0.1:5000/"
 // PYTHONANYWHERE SETTINGS
-// const URL = "http://gabonline.pythonanywhere.com/"
+const URL = "http://gabonline.pythonanywhere.com/"
 // Variables de estado para controlar la visibilidad y los datos del formulario
 let turnoId = '';
 let nombre = '';
