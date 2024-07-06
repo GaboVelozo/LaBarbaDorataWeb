@@ -129,7 +129,7 @@ function eliminarTurno(turnoId) {
       .then(response => {
         if (response.ok) {
           // Si es exitosa (response.ok), elimina el turno y da mensaje de ok.
-          obtenerListaTurnos(); // Vuelve a obtener la lista de turnos para actualizar la tabla.
+          //obtenerListaTurnos(); // Vuelve a obtener la lista de turnos para actualizar la tabla.
           alert('Turno eliminado correctamente.');
         }
       })
