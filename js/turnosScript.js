@@ -81,11 +81,11 @@ function obtenerListaTurnos() {
 
     //Esta función maneja los datos convertidos del JSON.
     .then(function (data) {
-      let tablaTurnos = document.getElementById('turnos-table'); //Selecciona el elemento del DOM donde se mostrarán los productos.
+      let tablaTurnos = document.getElementById('turnos-table'); //Selecciona el elemento del DOM donde se mostrarán los turnos.
 
       // Iteramos sobre cada turnos y agregamos filas a la tabla
       for (let turno of data) {
-        let fila = document.createElement('tr'); //Crea una nueva fila de tabla (<tr>) para cada producto.
+        let fila = document.createElement('tr'); //Crea una nueva fila de tabla (<tr>) para cada turno.
         fila.innerHTML = `
                     <th scope="row">${turno.TurnoID}</th>
                     <td>${turno.Nombre}</td>
@@ -95,7 +95,7 @@ function obtenerListaTurnos() {
                     <td>${turno.FechaHora}</td>
                     <td align="center">${turno.Mensaje}</td>
                     <td><img src='${URL}static/imagenes/${turno.Imagen_url}' 
-                        alt="Imagen del producto" 
+                        alt="Imagen del turno" 
                         style="max-width: 100%; height: auto; " 
                         class="img-fluid img-thumbnail"
                         onclick="abrirImagen(this)">
@@ -111,25 +111,25 @@ function obtenerListaTurnos() {
       }
     })
 
-    //Captura y maneja errores, mostrando una alerta en caso de error al obtener los productos.
+    //Captura y maneja errores, mostrando una alerta en caso de error al obtener los turnos.
     .catch(function (error) {
       // Código para manejar errores
-      alert('Error al obtener los productos.');
+      alert('Error al obtener los turnos.');
     });
 }
 
 
 
 //ELIMINAR TURNOS
-// Se utiliza para eliminar un producto.
+// Se utiliza para eliminar un turno.
 function eliminarTurno(turnoId) {
-  // Se muestra un diálogo de confirmación. Si el usuario confirma, se realiza una solicitud DELETE al servidor a través de fetch(URL + 'productos/${codigo}', {method: 'DELETE' }).
+  // Se muestra un diálogo de confirmación. Si el usuario confirma, se realiza una solicitud DELETE al servidor a través de fetch(URL + 'turnos/${turniD}', {method: 'DELETE' }).
   if (confirm('¿Estás seguro de que quieres eliminar este turno?')) {
     fetch(URL + `turnos/${turnoId}`, { method: 'DELETE' })
       .then(response => {
         if (response.ok) {
-          // Si es exitosa (response.ok), elimina el producto y da mensaje de ok.
-          obtenerListaTurnos(); // Vuelve a obtener la lista de productos para actualizar la tabla.
+          // Si es exitosa (response.ok), elimina el turno y da mensaje de ok.
+          obtenerListaTurnos(); // Vuelve a obtener la lista de turnos para actualizar la tabla.
           alert('Turno eliminado correctamente.');
         }
       })
@@ -142,10 +142,10 @@ function eliminarTurno(turnoId) {
 
 
 //MODIFICAION DE TURNOS
-// Se ejecuta cuando se envía el formulario de consulta. Realiza una solicitud GET a la API y obtiene los datos del producto correspondiente al código ingresado.
+// Se ejecuta cuando se envía el formulario de consulta. Realiza una solicitud GET a la API y obtiene los datos del turno correspondiente al código ingresado.
 function obtenerTurno(event) {
   event.preventDefault();
-  turnoId = document.getElementById('codigo').value;
+  turnoId = document.getElementById('turnoID').value;
   fetch(URL + 'turnos/' + turnoId)
     .then(response => {
       if (response.ok) {
@@ -171,7 +171,7 @@ function obtenerTurno(event) {
     });
 }
 
-// Muestra el formulario con los datos del producto
+// Muestra el formulario con los datos del turno
 function mostrarFormulario() {
   if (mostrarDatosTurno) {
     document.getElementById('nombreModificar').value = nombre;
@@ -212,7 +212,7 @@ function seleccionarImagen(event) {
   imagenVistaPrevia.style.display = 'block';
 }
 
-// Se usa para enviar los datos modificados del producto al servidor.
+// Se usa para enviar los datos modificados del turno al servidor.
 function guardarCambios(event) {
   event.preventDefault();
 

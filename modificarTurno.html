@@ -60,8 +60,8 @@
             <h2>Modificar Turno</h2>
 
             <form id="form-obtener-turno">
-                <label for="codigo">Codigo del turno:</label>
-                <input type="text" id="codigo" required><br>
+                <label for="turnoID">ID del turno:</label>
+                <input type="text" id="turnoID" required><br>
                 <button id="btnModificarTurno" type="submit">Modificar Turno</button>
             </form>
             <br><br>
@@ -107,7 +107,7 @@
                         placeholder="Click aqui para seleccionar un turno" readonly>
               
                     <br><br><br>
-                    <!-- Imagen actual del producto - Debe comentarse al subirse al servidor-->
+                    <!-- Imagen actual del turno - Debe comentarse al subirse al servidor-->
                     <img id="imagen-actual" style="max-width: 200px; display: none;">
                     <!-- Vista previa de la nueva imagen seleccionada -->
                     <img id="imagen-vista-previa" style="max-width: 200px; display: none;">
@@ -220,7 +220,7 @@
 
         // Hacer algo con el parámetro, por ejemplo, mostrarlo en un elemento HTML
         if (parametro) {
-            document.getElementById('codigo').value = parametro;
+            document.getElementById('turnoID').value = parametro;
             mostrarDatosTurno = true;
             mostrarFormulario();
             btnModificarTurno.click();

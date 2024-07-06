@@ -218,7 +218,7 @@ def modificar_turno(turnoID):
         if turno:
             nombre_imagen = turno["Imagen_url"]
 
-   # Se llama al método modificar_turno pasando el codigo del turno y los nuevos datos.
+   # Se llama al método modificar_turno pasando el turnoID del turno y los nuevos datos.
     if turnosCatalogo.modificar_turno(turnoID,nuevo_Nombre, nuevo_Apellido, nuevo_email, nombre_imagen, nuevo_telefono, nueva_fecha_Hora, nuevo_mensaje):
         return jsonify({"mensaje": "Turno modificado"}), 200
     else:
