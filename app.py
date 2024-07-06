@@ -122,10 +122,10 @@ class Turnos:
 #--------------------------------------------------------------------
 # Crear una instancia de la clase CatalogoCatalogo
 # LOCAL SETTINGS
-turnosCatalogo = Turnos(host=bd.host, user=bd.user, password=bd.password, database=bd.database)
+#turnosCatalogo = Turnos(host=bd.host, user=bd.user, password=bd.password, database=bd.database)
 # PYTHONANYWHERE SETTINGS
-# turnosCatalogo = Turnos(host='gabonline.mysql.pythonanywhere-services.com', 
-                        # user='gabonline', password='rootroot', database='gabonline$miapp')
+turnosCatalogo = Turnos(host='gabonline.mysql.pythonanywhere-services.com', 
+                        user='gabonline', password='rootroot', database='gabonline$miapp')
 
 # Carpeta para guardar las imagenes
 # LOCAL SETTINGS
