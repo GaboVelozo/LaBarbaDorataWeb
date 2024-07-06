@@ -18,6 +18,7 @@ from dateutil import parser
 # No es necesario instalar, es parte del sistema standard de Python
 import os
 import time
+import datosconexion as bd
 #--------------------------------------------------------------------
 
 app = Flask(__name__)
@@ -121,7 +122,7 @@ class Turnos:
 #--------------------------------------------------------------------
 # Crear una instancia de la clase CatalogoCatalogo
 # LOCAL SETTINGS
-turnosCatalogo = Turnos(host='localhost', user='root', password='', database='miapp')
+turnosCatalogo = Turnos(host=bd.host, user=bd.user, password=bd.password, database=bd.database)
 # PYTHONANYWHERE SETTINGS
 # turnosCatalogo = Turnos(host='gabonline.mysql.pythonanywhere-services.com', 
                         # user='gabonline', password='rootroot', database='gabonline$miapp')
