@@ -129,9 +129,9 @@ turnosCatalogo = Turnos(host='gabonline.mysql.pythonanywhere-services.com',
 
 # Carpeta para guardar las imagenes
 # LOCAL SETTINGS
-ruta_destino = './static/imagenes/'
+# ruta_destino = './static/imagenes/'
 # PYTHONANYWHERE SETTINGS
-# ruta_destino = '/home/gabonline/mysite/static/imagenes'
+ruta_destino = '/home/gabonline/mysite/static/imagenes'
 
 @app.route("/turnos", methods=["GET"])
 def listar_turnos():

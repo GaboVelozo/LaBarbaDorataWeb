@@ -94,7 +94,7 @@ function obtenerListaTurnos() {
                     <td>${turno.Email}</td>
                     <td>${turno.FechaHora}</td>
                     <td align="center">${turno.Mensaje}</td>
-                    <td><img src=./static/imagenes/${turno.Imagen_url} 
+                    <td><img src='/home/gabonline/mysite/static/imagenes/${turno.Imagen_url}' 
                         alt="Imagen del producto" 
                         style="max-width: 100%; height: auto; " 
                         class="img-fluid img-thumbnail"
