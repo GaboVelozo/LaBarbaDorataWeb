@@ -1,0 +1,102 @@
+#turnos-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Arial', sans-serif;
+    margin: 20px 0;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#turnos-table thead {
+    background-color: #FFD700;
+    color: white;
+}
+
+#turnos-table th,
+#turnos-table td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+#turnos-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#turnos-table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+#turnos-table tbody tr:hover {
+    background-color: #ddd;
+}
+
+#turnos-table th {
+    position: sticky;
+    top: 0;
+    color: black;
+    text-transform: uppercase;
+    border-bottom: 2px solid #ddd;
+}
+
+#turnos-table td {
+    border-bottom: 1px solid #ddd;
+}
+
+#turnos-table th:first-child,
+#turnos-table td:first-child {
+    text-align: left;
+}
+
+#turnos-table th:not(:first-child),
+#turnos-table td:not(:first-child) {
+    text-align: center;
+}
+
+#turnos-table td img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+#turnos-table td img:hover {
+    transform: scale(1.5);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    margin: 15% auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.modal-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}

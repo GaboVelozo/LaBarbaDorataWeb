@@ -12,6 +12,9 @@ import mysql.connector
 from werkzeug.utils import secure_filename
 
 from datetime import datetime
+
+from dateutil import parser
+
 # No es necesario instalar, es parte del sistema standard de Python
 import os
 import time
@@ -99,9 +102,12 @@ class Turnos:
     def modificar_turno(self, TurnoID, nuevo_Nombre, nuevo_Apellido, nuevo_Email, nueva_Imagen, nuevo_Telefono, nueva_FechaHora, nuevo_Mensaje):
         sql = "UPDATE Turnos SET Nombre = %s, Apellido = %s, Email = %s, Imagen_url = %s, Telefono = %s, FechaHora = %s, Mensaje = %s WHERE TurnoID = %s"
         valores = (nuevo_Nombre, nuevo_Apellido, nuevo_Email, nueva_Imagen, nuevo_Telefono ,nueva_FechaHora, nuevo_Mensaje, TurnoID)
-
-        self.cursor.execute(sql, valores)
-        self.conn.commit()
+        try:
+            self.cursor.execute(sql, valores)
+            self.conn.commit()
+            print("Turno actualizado correctamente.")
+        except mysql.connector.Error as err:
+            print(f"Error: {err}")
         return self.cursor.rowcount > 0
 
     def eliminar_turno(self, TurnoID):
@@ -114,12 +120,16 @@ class Turnos:
 # Cuerpo del programa
 #--------------------------------------------------------------------
 # Crear una instancia de la clase CatalogoCatalogo
+# LOCAL SETTINGS
 turnosCatalogo = Turnos(host='localhost', user='root', password='', database='miapp')
+# PYTHONANYWHERE SETTINGS
 # turnosCatalogo = Turnos(host='gabonline.mysql.pythonanywhere-services.com', 
                         # user='gabonline', password='rootroot', database='gabonline$miapp')
 
 # Carpeta para guardar las imagenes
+# LOCAL SETTINGS
 ruta_destino = './static/imagenes/'
+# PYTHONANYWHERE SETTINGS
 # ruta_destino = '/home/gabonline/mysite/static/imagenes'
 
 @app.route("/turnos", methods=["GET"])
@@ -158,8 +168,7 @@ def agregar_turno():
     telefono= request.form['telefono']
     mensaje= request.form['mensaje']
     fecha_Hora= request.form['datetimepicker'] 
-    nombre_imagen=""
-
+    
     # Genero el nombre de la imagen
     nombre_imagen = secure_filename(imagen.filename) 
     nombre_base, extension = os.path.splitext(nombre_imagen) 
@@ -180,7 +189,7 @@ def modificar_turno(turnoID):
     nuevo_email= request.form["email"]
     nuevo_telefono= request.form["telefono"]
     nuevo_mensaje= request.form["mensaje"]
-    nueva_fecha_Hora= request.form["fecha"] 
+    nueva_fecha_Hora= request.form["fecha"]
     
     # Verifica si se proporcionó una nueva imagen
     if 'imagen' in request.files:

@@ -14,11 +14,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="/js/jquery.datetimepicker.full.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/turnosScript.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/turnosStyles.css" />
 </head>
+
 <body>
     <header class="header">
-
         <div class="content-hamb">
             <div class="menu-hamb container-hamb">
                 <a href="index.html" class="logo-hamb animate__heartBeat"><img src="/images/logo_barba.png"
@@ -45,35 +45,38 @@
                     </ul>
                 </nav>
             </div>
-
         </div>
-
     </header>
 
-    <div>
-
-        <h1>Listar Turnos</h1>
-        <br>
-
-        <table id="turnos-table"> <!-- Se crea una tabla para mostrar los productos. -->
-            <thead> <!--Encabezado de la tabla con columnas para código, descripción, cantidad, precio y acciones.-->
-                <tr>
-                    <th>Turnos Id</th>
-                    <th align="center">Nombre</th>
-                    <th align="center">Apellido</th>
-                    <th align="center">Telefono</th>
-                    <th align="center">Email</th>
-                    <th align="center">FechaHora</th>
-                    <th align="center">Mensaje</th>
-                    <th>Imagen_url</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table><br>
-
-
+    <div class="flex-container">
+        <section id="contact-section" class="item2">
+            <h1>Listar Turnos</h1>
+            <br>
+            <table id="turnos-table">
+                <!-- Se crea una tabla para mostrar los turnos. -->
+                <thead>
+                    <!-- Encabezado de la tabla con columnas -->
+                    <tr>
+                        <th>Turno Id</th>
+                        <th align="center">Nombre</th>
+                        <th align="center">Apellido</th>
+                        <th align="center">Telefono</th>
+                        <th align="center">Email</th>
+                        <th align="center">FechaHora</th>
+                        <th align="center">Mensaje</th>
+                        <th>Imagen_url</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <br>
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img01">
+            </div>
+        </section>
     </div>
 
     <footer class="footer">
@@ -83,83 +86,52 @@
                     <i class="fa-brands fa-instagram fa-2xl"></i>
                 </a>
             </li>
-
             <li class="icon-elem">
                 <a href="https://www.facebook.com/" target="_blank" class="icon">
                     <i class="fa-brands fa-square-facebook fa-2xl"></i>
                 </a>
             </li>
-
             <li class="icon-elem">
                 <a href="https://www.tiktok.com/es/" target="_blank" class="icon">
                     <i class="fa-brands fa-tiktok fa-2xl"></i>
                 </a>
             </li>
-
             <li class="icon-elem">
                 <a href="https://web.whatsapp.com/" target="_blank" class="icon">
                     <i class="fa-brands fa-whatsapp fa-2xl"></i>
                 </a>
             </li>
         </ul>
-
         <div class="derechos">
             <p>&copy; 2024 La Barba Dorata. Todos los derechos reservados.</p>
         </div>
-
     </footer>
+
+    <script type="text/javascript" src="js/turnosScript.js"></script>
+    <script>
+        // COdigo para hover/click en la imagen
+        const modal = document.getElementById('myModal');
+        const modalImg = document.getElementById('img01');
+        const closeBtn = document.getElementsByClassName('close')[0];
+
+        function abrirImagen(e) {
+            var src = e.src;
+            modal.style.display = 'block';
+            modalImg.src = src;
+        }
+
+        closeBtn.onclick = function () {
+            modal.style.display = 'none';
+        }
+
+        modal.onclick = function (event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+        // Cuando la página se carga, llama a obtenerTurnos para cargar la lista de turnos.
+        document.addEventListener('DOMContentLoaded', obtenerListaTurnos);
+    </script>
 </body>
 
 </html>
-
-<script>
-    const URL = "http://gabonline.pythonanywhere.com/"
-
-    // Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
-    //const URL = "https://USUARIO.pythonanywhere.com/"
-
-
-    // Realizamos la solicitud GET al servidor para obtener todos los turnos.
-    fetch(URL + 'turnos')
-        .then(function (response) {
-            if (response.ok) {
-                //Si la respuesta es exitosa (response.ok), convierte el cuerpo de la respuesta de formato JSON a un objeto JavaScript y pasa estos datos a la siguiente promesa then.
-                return response.json();
-            } else {
-                // Si hubo un error, lanzar explícitamente una excepción para ser "catcheada" más adelante
-                throw new Error('Error al obtener los turnos.');
-            }
-        })
-
-        //Esta función maneja los datos convertidos del JSON.
-        .then(function (data) {
-            let tablaTurnos = document.getElementById('turnos-table'); //Selecciona el elemento del DOM donde se mostrarán los productos.
-
-            // Iteramos sobre cada turnos y agregamos filas a la tabla
-            for (let turno of data) {
-                let fila = document.createElement('tr'); //Crea una nueva fila de tabla (<tr>) para cada producto.
-                fila.innerHTML = row.innerHTML = `
-                            <td>${turno.TurnoID}</td>
-                            <td>${turno.Nombre}</td>
-                            <td>${turno.Apellido}</td>
-                            <td>${turno.Telefono}</td>
-                            <td>${turno.Email}</td>
-                            <td>${turno.FechaHora.toString()}</td>
-                            <td align="center">${turno.Mensaje}</td>
-                            <td><img src=./static/imagenes/${turno.Imagen_url} alt="Imagen del producto" style="width: 100px;"></td>
-                            <td><button onclick="eliminarTurno('${turno.TurnoID}')">Eliminar</button></td>
-                        `;
-                //Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
-                //'<td><img src=https://www.pythonanywhere.com/user/USUARIO/files/home/USUARIO/mysite/static/imagenes/' + producto.imagen_url +' alt="Imagen del producto" style="width: 100px;"></td>' + '<td align="right">' + producto.proveedor + '</td>';
-
-                //Una vez que se crea la fila con el contenido del producto, se agrega a la tabla utilizando el método appendChild del elemento tablaProductos.
-                tablaTurnos.appendChild(fila);
-            }
-        })
-
-        //Captura y maneja errores, mostrando una alerta en caso de error al obtener los productos.
-        .catch(function (error) {
-            // Código para manejar errores
-            alert('Error al obtener los productos.');
-        });
-</script>

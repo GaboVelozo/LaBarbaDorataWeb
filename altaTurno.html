@@ -16,13 +16,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/turnosScript.js"></script>
 </head>
+
 <body>
     <header class="header">
-
         <div class="content-hamb">
             <div class="menu-hamb container-hamb">
-                <a href="index.html" class="logo-hamb animate__heartBeat"><img src="/images/logo_barba.png"
-                        alt="logo-barba-dorata" /></a>
+                <a href="index.html" class="logo-hamb animate__heartBeat">
+                    <img src="/images/logo_barba.png" alt="logo-barba-dorata" />
+                </a>
                 <input type="checkbox" id="menu-hamb" />
                 <label for="menu-hamb">
                     <img src="/images/menu.png" class="menu-icono" alt="icono">
@@ -45,16 +46,14 @@
                     </ul>
                 </nav>
             </div>
-
         </div>
-
     </header>
 
     <div class="flex-container">
-
         <section id="contact-section" class="item2">
             <h2>Turnos</h2>
-            <form id="formulario" enctype="multipart/form-data" > <!-- onsubmit="return validateForm()" method="POST" -->
+            <form id="formulario-Alta" enctype="multipart/form-data">
+                <!-- onsubmit="return validateForm()" method="POST" -->
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
                 <div id="NombreError" class="errorDiv" hidden>Por favor ingrese su nombre de al menos 3 letras</div>
@@ -68,7 +67,7 @@
                 <div id="EmailError" class="errorDiv"></div>
 
                 <label for="telefono">Telefono:</label>
-                <input type="tel" id="telefono" name="telefono" placeholder="Ingrese su número de teléfono " required>
+                <input type="tel" id="telefono" name="telefono" placeholder="Ingrese su número de teléfono" required>
                 <div id="TelError" class="errorDiv"></div>
 
                 <label for="mensaje">Mensaje:</label>
@@ -76,27 +75,20 @@
                 <div id="MensajeError" class="errorDiv"></div>
                 <div>
                     <label for="selectCliente" style="display: inline-block;">Sos cliente nuevo?</label>
-
-                    <select name="cliente" id="selectCliente"
-                        style="display: inline-block; font-size: 100%;; margin-left: 10px;">
+                    <select name="cliente" id="selectCliente" style="display: inline-block; font-size: 100%; margin-left: 10px;">
                         <option value="si">Si</option>
                         <option value="no">No</option>
                     </select>
-
                 </div>
                 <br>
 
-                <label for="datetimepicker" ">Turno</label>
-                <input id="datetimepicker" name="datetimepicker" type="text" 
-                style="background-color: #FFD700; font-weight: bold; width: 30%;" 
-                placeholder="Click aqui para seleccionar un turno" readonly required>
-
+                <label for="datetimepicker">Turno</label>
+                <input id="datetimepicker" name="datetimepicker" type="text" style="background-color: #FFD700; font-weight: bold; width: 30%;" placeholder="Click aqui para seleccionar un turno" readonly required>
                 <br><br><br>
-                <label for=" imageUpload">Envianos una foto de tu pelo:</label>
+                <label for="imageUpload">Envianos una foto de tu pelo:</label>
                 <input type="file" id="imageUpload" name="imagen">
                 <br><br>
                 <button type="submit">Solicitar Turno</button>
-               
                 <button id="btnCancelar" onclick="history.back()" class="btn btn-secondary active" role="button">Cancelar</button>
             </form>
         </section>
@@ -108,8 +100,6 @@
         </section>
     </div>
 
-
-
     <footer class="footer">
         <ul class="social-icon">
             <li class="icon-elem">
@@ -117,19 +107,16 @@
                     <i class="fa-brands fa-instagram fa-2xl"></i>
                 </a>
             </li>
-
             <li class="icon-elem">
                 <a href="https://www.facebook.com/" target="_blank" class="icon">
                     <i class="fa-brands fa-square-facebook fa-2xl"></i>
                 </a>
             </li>
-
             <li class="icon-elem">
                 <a href="https://www.tiktok.com/es/" target="_blank" class="icon">
                     <i class="fa-brands fa-tiktok fa-2xl"></i>
                 </a>
             </li>
-
             <li class="icon-elem">
                 <a href="https://web.whatsapp.com/" target="_blank" class="icon">
                     <i class="fa-brands fa-whatsapp fa-2xl"></i>
@@ -140,37 +127,27 @@
         <div class="derechos">
             <p>&copy; 2024 La Barba Dorata. Todos los derechos reservados.</p>
         </div>
-
     </footer>
-
-
-
 </body>
-
-
 </html>
 
 <script>
-
     jQuery.datetimepicker.setLocale('es');
-    //especifico fecha  maxima que puede tomar el datetimepicker
-    var maxDateDTP= new Date();
+    // especifico fecha máxima que puede tomar el datetimepicker
+    var maxDateDTP = new Date();
     maxDateDTP.setDate(maxDateDTP.getDate() + 14);
-    //alert(maxDateDTP);
     jQuery('#datetimepicker').datetimepicker({
         onGenerate: function (ct) {
-            jQuery(this).find('.xdsoft_date.xdsoft_weekend')
-                .addClass('xdsoft_disabled');
+            jQuery(this).find('.xdsoft_date.xdsoft_weekend').addClass('xdsoft_disabled');
         },
-        onSelectDate:function(ct,$i){
-            alert('Seleccione un horario')
+        onSelectDate: function (ct, $i) {
+            alert('Seleccione un horario');
         },
         defaultDate: new Date(),
-        defaultTime:'09:00',
+        defaultTime: '09:00',
         minDate: 0,
         maxDate: maxDateDTP,
-        inline:true,
-        // week: 'true',
+        inline: true,
         allowTimes: [
             '9:00', '9:30',
             '10:00', '10:30',
@@ -183,61 +160,43 @@
             '17:00', '17:30',
             '18:00', '18:30',
             '19:00', '19:30',
-            '20:00', '20:30',
+            '20:00', '20:30'
         ]
     });
 </script>
 
 <script>
-
-    const URL = "http://gabonline.pythonanywhere.com/"
-
-    //Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
-    //const URL = "https://USUARIO.pythonanywhere.com/"
-
-
     // Capturamos el evento de envío del formulario
-    document.getElementById('formulario').addEventListener('submit', function (event) {
+    document.getElementById('formulario-Alta').addEventListener('submit', function (event) {
         event.preventDefault(); // Evitamos que se envie el form 
-
         var formData = new FormData(this);
-
         // Realizamos la solicitud POST al servidor
-        fetch(URL + 'turnos', { // fetcheamos a la URL http://http://127.0.0.1:5000/productos con el método POST (usamos la variable URL definida antes para poder colocar despues solo el nombre del decorador de la ruta en el servidor, en este caso productos)
+        fetch(URL + 'turnos', { // fetcheamos a la URL http://127.0.0.1:5000/productos con el método POST (usamos la variable URL definida antes para poder colocar despues solo el nombre del decorador de la ruta en el servidor, en este caso productos)
             method: 'POST',
             body: formData // Aquí enviamos formData. Dado que formData puede contener archivos, no se utiliza JSON.
         })
-
-            //Después de realizar la solicitud POST, se utiliza el método then() para manejar la respuesta del servidor.
-            .then(function (response) {
-                if (response.ok) {
-                    //Si la respuesta es exitosa, convierte los datos de la respuesta a formato JSON.
-                    return response.json();
-                } else {
-                    // Si hubo un error, lanzar explícitamente una excepción
-                    // para ser "catcheada" más adelante
-                    throw new Error('Error al agregar el turno.');
-                }
-            })
-
-            //Respuesta OK, muestra una alerta informando que el producto se agregó correctamente y limpia los campos del formulario para que puedan ser utilizados para un nuevo producto.
-            .then(function (data) {
-                alert('Turno agregado correctamente.');
-            })
-
-            // En caso de error, mostramos una alerta con un mensaje de error.
-            .catch(function (error) {
-                alert('Error al agregar el turno.');
-            })
-
-            // Limpiar el formulario en ambos casos (éxito o error)
-            .finally(function () {
-                document.getElementById('nombre').value = "";
-                document.getElementById('apellido').value = "";
-                document.getElementById('email').value = "";
-                document.getElementById('telefono').value = "";
-                document.getElementById('mensaje').value = "";
-                document.getElementById('datetimepicker').value = "";
-            });
-    })
+        .then(function (response) {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('Error al agregar el turno.');
+            }
+        })
+        .then(function (data) {
+            alert('Turno agregado correctamente.');
+            window.location.href = "listado.html";
+        })
+        .catch(function (error) {
+            alert('Error al agregar el turno.');
+        })
+        .finally(function () {
+            document.getElementById('nombre').value = "";
+            document.getElementById('apellido').value = "";
+            document.getElementById('email').value = "";
+            document.getElementById('telefono').value = "";
+            document.getElementById('mensaje').value = "";
+            document.getElementById('datetimepicker').value = "";
+        });
+    });
 </script>
+
