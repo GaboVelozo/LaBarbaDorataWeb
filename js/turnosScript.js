@@ -87,7 +87,7 @@ function obtenerListaTurnos() {
       for (let turno of data) {
         let fila = document.createElement('tr'); //Crea una nueva fila de tabla (<tr>) para cada turno.
         fila.innerHTML = `
-                    <th scope="row">${turno.TurnoID}</th>
+                    <th scope="row" style="color:white;">${turno.TurnoID}</th>
                     <td>${turno.Nombre}</td>
                     <td>${turno.Apellido}</td>
                     <td>${turno.Telefono}</td>
@@ -95,14 +95,14 @@ function obtenerListaTurnos() {
                     <td>${turno.FechaHora}</td>
                     <td align="center">${turno.Mensaje}</td>
                     <td><img src='${URL}static/imagenes/${turno.Imagen_url}' 
-                        alt="Imagen del turno" 
+                        title="Click para agrandar" 
                         style="max-width: 100%; height: auto; " 
                         class="img-fluid img-thumbnail"
                         onclick="abrirImagen(this)">
                     <td>
-                      <button class="btn btn-primary btn-sm fa-solid fa-user-xmark" onclick="eliminarTurno('${turno.TurnoID}')" alt="Eliminar turno"></button>
+                      <button class="btn btn-primary btn-sm fa-solid fa-user-xmark" onclick="eliminarTurno('${turno.TurnoID}')" title="Eliminar turno"></button>
                       
-                      <button class="btn btn-primary btn-sm fa-solid fa-pen" onclick="window.location.href='modificarTurno.html?idTurno=${turno.TurnoID}'" alt="Modificar turno"></button>
+                      <button class="btn btn-primary btn-sm fa-solid fa-pen" onclick="window.location.href='modificarTurno.html?idTurno=${turno.TurnoID}'" title="Modificar turno"></button>
                     </td>
                     
                 `;

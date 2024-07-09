@@ -14,9 +14,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="icon" href="/images/logo_barba-icono.ico" />
     <link rel="stylesheet" href="css/styles.css" />
+
+    <style>
+        form{
+            background-color: black;
+        }
+
+        *{
+            color: white;
+        }
+    </style>
 </head>
 
-<body>
+<body style="background-color: black; color: white;">
     <header class="header">
 
         <div class="content-hamb">
@@ -52,8 +62,8 @@
 
     <div class="flex-container">
 
-        <section id="contact-section" class="item2">
-            <h2>Envíanos un Mensaje</h2>
+        <section id="contact-section" class="item2" style="background-color: black; color: white;">
+            <h1 style="color: white;">Envíanos un Mensaje</h1>
             <form name="contacto-form" action="#" onsubmit="return validateForm()" method="POST">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
@@ -75,11 +85,11 @@
                 <textarea id="mensaje" name="mensaje" rows="4"></textarea>
                 <div id="MensajeError" class="errorDiv"></div>
                 <div>
-                    <label for="selectCliente" style="display: inline-block;">Sos cliente nuevo?</label>
+                    <label for="selectCliente" style="display: inline-block; color: white;">Sos cliente nuevo?</label>
 
                     <select name="cliente" id="selectCliente"
-                        style="display: inline-block; font-size: 100%;; margin-left: 10px;">
-                        <option value="si">Si</option>
+                        style="display: inline-block; font-size: 100%;; margin-left: 10px; color: black;">
+                        <option value="si" >Si</option>
                         <option value="no">No</option>
                     </select>
 
@@ -88,24 +98,26 @@
 
                 <div>
                     <input type="checkbox" id="chkSuscribirse" name="chkSuscribirse" value="si"
-                        style="display: inline-block; gap:10px;">
+                        style="display: inline-block; gap:10px; color: white;">
 
-                    <label for="chkSuscribirse" style="display: inline-block; margin-left: 10px;">Recibir
+                    <label for="chkSuscribirse" style="display: inline-block; margin-left: 10px; color: white;">Recibir
                         novedades</label><br>
                 </div>
 
-                <label for="imageUpload">Envianos una foto de tu pelo:</label>
+                <br>
+
+                <label for="imageUpload" style="color: white;">Envianos una foto de tu pelo:</label>
                 <input type="file" id="imageUpload" name="imageUpload">
                 <br><br>
-                <button type="submit">Enviar</button>
+                <button type="submit" style="background-color: #FFD700; color:black;">Enviar</button>
             </form>
         </section>
-        <section id="contact-info" class="item1">
+        <div id="contact-info" class="item1" style="color: white;">
             <h2>ACÁ PODÉS ENCONTRARNOS</h2>
             <p>Dirección: Calle 1 123, La Plata, Buenos Aires, 1900</p>
             <p>Teléfono: (123) 456-7890</p>
             <p>Correo Electrónico: info@LaBarbaDorata.com.ar</p>
-        </section>
+        </div>
     </div>
     <div class="mapa-google item3">
         <iframe

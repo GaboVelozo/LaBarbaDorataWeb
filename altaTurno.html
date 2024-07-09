@@ -15,9 +15,15 @@
     <script src="/js/jquery.datetimepicker.full.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/turnosScript.js"></script>
+    <style>
+        form{
+            background-color: black;
+        }
+
+    </style>
 </head>
 
-<body>
+<body style="background-color: black;">
     <header class="header">
         <div class="content-hamb">
             <div class="menu-hamb container-hamb">
@@ -50,8 +56,8 @@
     </header>
 
     <div class="flex-container">
-        <section id="contact-section" class="item2">
-            <h2>Turnos</h2>
+        <section id="contact-section" class="item2" style="background-color: black">
+            <h1 style="color: white;">Datos del Turnos</h1>
             <form id="formulario-Alta" enctype="multipart/form-data">
                 <!-- onsubmit="return validateForm()" method="POST" -->
                 <label for="nombre">Nombre:</label>
@@ -74,25 +80,25 @@
                 <textarea id="mensaje" name="mensaje" rows="4" placeholder="Contanos de vos y qué te gustaría que logremos con tu pelo" required></textarea>
                 <div id="MensajeError" class="errorDiv"></div>
                 <div>
-                    <label for="selectCliente" style="display: inline-block;">Sos cliente nuevo?</label>
-                    <select name="cliente" id="selectCliente" style="display: inline-block; font-size: 100%; margin-left: 10px;">
+                    <label for="selectCliente" style="display: inline-block; color: white;">Sos cliente nuevo?</label>
+                    <select name="cliente" id="selectCliente" style="display: inline-block; font-size: 100%; margin-left: 10px; color: black;">
                         <option value="si">Si</option>
                         <option value="no">No</option>
                     </select>
                 </div>
                 <br>
 
-                <label for="datetimepicker">Turno</label>
+                <label for="datetimepicker" style="color: white;">Fecha y hora del turno</label>
                 <input id="datetimepicker" name="datetimepicker" type="text" style="background-color: #FFD700; font-weight: bold; width: 30%;" placeholder="Click aqui para seleccionar un turno" readonly required>
                 <br><br><br>
-                <label for="imageUpload">Envianos una foto de tu pelo:</label>
+                <label for="imageUpload" style="color: white;">Envianos una foto de tu pelo:</label>
                 <input type="file" id="imageUpload" name="imagen">
                 <br><br>
-                <button type="submit">Solicitar Turno</button>
-                <button id="btnCancelar" onclick="history.back()" class="btn btn-secondary active" role="button">Cancelar</button>
+                <button type="submit" style="background-color: #FFD700; color:black;">Solicitar Turno</button>
+                <button id="btnCancelar" onclick="history.back()" class="btn btn-secondary active" role="button" style="color:black;">Cancelar</button>
             </form>
         </section>
-        <section id="contact-info" class="item1">
+        <section id="contact-info" class="item1" style="color: white;">
             <h2>ACÁ PODÉS ENCONTRARNOS</h2>
             <p>Dirección: Calle 1 123, La Plata, Buenos Aires, 1900</p>
             <p>Teléfono: (123) 456-7890</p>
