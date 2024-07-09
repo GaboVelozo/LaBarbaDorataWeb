@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/styles.css" />
 </head>
 
-<body>
+<body style="background-color: black;">
     <header class="header">
 
         <div class="content-hamb">
@@ -49,36 +49,49 @@
 
     </header>
 
-    <section>
-        <h2 style="text-align: center">Gestión de Turnos</h2>
-        <ul class="turnos-list">
-            <li>
-                <a href="AltaTurno.html">
-                    <button type="button" class="btn btn-primary">
-                        Alta de Turnos
-                    </button>
-                </a>
-            </li>
-            <br>
-            <li>
-                <a href="modificarTurno.html">
-                    <button type="button" class="btn btn-primary">
-                        Modificacion de Turnos
-                    </button>
-                </a>
-            </li>
-            <br>
-            <li>
-                <a href="listado.html">
-                    <button type="button" class="btn btn-primary">
-                        Listar/Eliminar Turnos
-                    </button>
-                </a>
-            </li>
-        </ul>
-    </section>
+    <div id="divUnderHeader" style="background-color: black; height: auto; margin-top: 60px;">
 
-    <footer class="footer">
+        <div id="carouselContainer" class="row d-flex justify-content-center align-items-center">
+            <div class="col-md-4 " style="color:white; text-align: center;">
+                <h1> Gestión de Turnos</h1>
+            </div>
+            <br>
+            <div class="col-md-8" id="carouselContainer" style="background-color: black; width: 65%;">
+
+                <ul class="turnos-list">
+                    <li>
+                        <a href="AltaTurno.html">
+                            <button type="button" class="btn btn-primary">
+                                Alta de Turnos
+                            </button>
+                        </a>
+                    </li>
+                    <br>
+                    <li>
+                        <a href="modificarTurno.html">
+                            <button type="button" class="btn btn-primary">
+                                Modificacion de Turnos
+                            </button>
+                        </a>
+                    </li>
+                    <br>
+                    <li>
+                        <a href="listado.html">
+                            <button type="button" class="btn btn-primary">
+                                Listar/Eliminar Turnos
+                            </button>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <br>
+    </div>
+
+
+
+    <footer class="footer" style="display: flex; align-self: flex-end;">
         <ul class="social-icon">
             <li class="icon-elem">
                 <a href="https://www.instagram.com/" target="_blank" class="icon">
@@ -123,7 +136,8 @@
         box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
         border-radius: 10px;
     }
-    .turnos-list li{
+
+    .turnos-list li {
         text-align: center;
     }
 
@@ -134,17 +148,17 @@
         border: none;
         border-radius: 5px;
         cursor: pointer;
-        background-color: #FFD700; 
-        color: black; 
+        background-color: #FFD700;
+        color: black;
         font-size: larger;
-        
+
     }
+
     .turnos-list button:hover {
         background-color: #fafafa;
         color: black;
 
     }
-
 </style>
 
 </html>
