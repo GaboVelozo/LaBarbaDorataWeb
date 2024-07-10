@@ -13,6 +13,58 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="icon" href="/images/logo_barba-icono.ico" />
     <link rel="stylesheet" href="css/styles.css" />
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .bg-image {
+            /* The image used */
+            background-image: url("./images/logo/Designer-removebg-preview.png");
+
+            /* Add the blur effect */
+            filter: blur(8px);
+            -webkit-filter: blur(8px);
+
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+        }
+
+        .bg-text {
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/opacity/see-through */
+            color: white;
+            font-weight: bold;
+            border: 3px solid #f1f1f1;
+            position: relative;
+            margin: 0 auto;
+            /* margin-top: -50px; */
+            z-index: 2;
+            width: 100%;
+            max-width: 900px;
+            padding: 20px;
+            text-align: center;
+            max-height: calc(300vh - 100px);
+            align-items: center;
+            overflow-y: auto;
+            height: 500px;
+            /* top: 50px; */
+        }
+    </style>
 </head>
 
 <body style="background-color: black;">
@@ -48,28 +100,29 @@
         </div>
 
     </header>
+    <div class="bg-image"></div>
 
-    <div id="divUnderHeader" style="background-color: black; height: auto; margin-top: 60px;">
+    <div id="divUnderHeader" style="margin-top: 60px;" class="bg-text">
 
-        <div id="carouselContainer" class="row d-flex justify-content-center align-items-center">
-            <div class="col-md-4 " style="color:white; text-align: center;">
+        <div id="carouselContainer" class="row d-flex justify-content-center align-items-center" style="margin-top: 13%">
+            <div class="col-md-4 " style="color:white; text-align: center; text-shadow: black 1px;">
                 <h1> Gestión de Turnos</h1>
             </div>
             <br>
-            <div class="col-md-8" id="carouselContainer" style="background-color: black; width: 65%;">
+            <div class="col-md-8" id="carouselContainer">
 
                 <ul class="turnos-list">
                     <li>
                         <a href="AltaTurno.html">
-                            <button type="button" class="btn btn-primary">
+                            <button type="button" class="btn btn-primary" style="white-space: normal; min-width:max-content;">
                                 Alta de Turnos
                             </button>
                         </a>
                     </li>
                     <br>
                     <li>
-                        <a href="modificarTurno.html">
-                            <button type="button" class="btn btn-primary">
+                        <a href="modificarTurno.html" style="">
+                            <button type="button" class="btn btn-primary" style="margin: auto; min-width:max-content;">
                                 Modificacion de Turnos
                             </button>
                         </a>
@@ -77,8 +130,8 @@
                     <br>
                     <li>
                         <a href="listado.html">
-                            <button type="button" class="btn btn-primary">
-                                Listar/Eliminar Turnos
+                            <button type="button" class="btn btn-primary" style="margin: auto; min-width:max-content;">
+                                Listar / Eliminar Turnos
                             </button>
                         </a>
                     </li>
@@ -91,7 +144,7 @@
 
 
 
-    <footer class="footer" style="display: flex; align-self: flex-end;">
+    <footer class="footer" style="position: relative;">
         <ul class="social-icon">
             <li class="icon-elem">
                 <a href="https://www.instagram.com/" target="_blank" class="icon">
@@ -127,7 +180,7 @@
 
 <style>
     .turnos-list {
-        max-width: 90%;
+        max-width: 100%;
         margin: 0 auto;
         padding: 20px;
         background-color: #1d1a39;

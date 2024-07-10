@@ -23,6 +23,9 @@
         *{
             color: white;
         }
+        #contacto-form label{
+            color: white;
+        }
     </style>
 </head>
 
@@ -64,24 +67,24 @@
 
         <section id="contact-section" class="item2" style="background-color: black;">
             <h1 style="color: white;">Envíanos un Mensaje</h1>
-            <form name="contacto-form" action="#" onsubmit="return validateForm()" method="POST">
-                <label for="nombre">Nombre:</label>
+            <form name="contacto-form" action="#" onsubmit="return validateForm()" method="POST" style="color: black;">
+                <label for="nombre" style="color: white;">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
                 <div id="NombreError" class="errorDiv" hidden>Por favor ingrese su nombre de al menos 3 letras</div>
 
-                <label for="apellido">Apellido:</label>
+                <label for="apellido" style="color: white;">Apellido:</label>
                 <input type="text" id="apellido" name="apellido" placeholder="Ingrese su apellido">
                 <div id="ApellidoError" class="errorDiv"></div>
 
-                <label for="email">Correo Electrónico:</label>
+                <label for="email" style="color: white;"> Correo Electrónico:</label>
                 <input type="email" id="email" name="email" placeholder="Ingrese su email">
                 <div id="EmailError" class="errorDiv"></div>
 
-                <label for="telefono">Telefono:</label>
+                <label for="telefono" style="color: white;">Telefono:</label>
                 <input type="tel" id="telefono" name="telefono" placeholder="Ingrese su número de teléfono ">
                 <div id="TelError" class="errorDiv"></div>
 
-                <label for="mensaje">Mensaje:</label>
+                <label for="mensaje" style="color: white;">Mensaje:</label>
                 <textarea id="mensaje" name="mensaje" rows="4"></textarea>
                 <div id="MensajeError" class="errorDiv"></div>
                 <div>
@@ -105,9 +108,9 @@
                 </div>
 
                 <br>
-
+                
                 <label for="imageUpload" style="color: white;">Envianos una foto de tu pelo:</label>
-                <input type="file" id="imageUpload" name="imageUpload">
+                <input type="file" id="imageUpload" name="imageUpload" style="color: white;">
                 <br><br>
                 <button type="submit" style="background-color: #FFD700; color:black;">Enviar</button>
             </form>

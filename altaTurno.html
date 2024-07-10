@@ -19,6 +19,9 @@
         form{
             background-color: black;
         }
+        #formulario-Alta label{
+            color: white;
+        }
 
     </style>
 </head>
@@ -56,15 +59,15 @@
     </header>
 
     <div class="flex-container">
-        <section id="contact-section" class="item2" style="background-color: black">
+        <section id="contact-section" class="item2" style="background-color: black;" >
             <h1 style="color: white;">Datos del Turnos</h1>
             <form id="formulario-Alta" enctype="multipart/form-data">
                 <!-- onsubmit="return validateForm()" method="POST" -->
-                <label for="nombre">Nombre:</label>
+                <label for="nombre"">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
                 <div id="NombreError" class="errorDiv" hidden>Por favor ingrese su nombre de al menos 3 letras</div>
 
-                <label for="apellido">Apellido:</label>
+                <label for="apellido"">Apellido:</label>
                 <input type="text" id="apellido" name="apellido" placeholder="Ingrese su apellido" required>
                 <div id="ApellidoError" class="errorDiv"></div>
 
@@ -88,11 +91,11 @@
                 </div>
                 <br>
 
-                <label for="datetimepicker" style="color: white;">Fecha y hora del turno</label>
+                <label for="datetimepicker">Fecha y hora del turno</label>
                 <input id="datetimepicker" name="datetimepicker" type="text" style="background-color: #FFD700; font-weight: bold; width: 30%;" placeholder="Click aqui para seleccionar un turno" readonly required>
                 <br><br><br>
-                <label for="imageUpload" style="color: white;">Envianos una foto de tu pelo:</label>
-                <input type="file" id="imageUpload" name="imagen">
+                <label for="imageUpload">Envianos una foto de tu pelo:</label>
+                <input type="file" id="imageUpload" name="imagen" style="color: white;">
                 <br><br>
                 <button type="submit" style="background-color: #FFD700; color:black;">Solicitar Turno</button>
                 <button id="btnCancelar" onclick="history.back()" class="btn btn-secondary active" role="button" style="color:black;">Cancelar</button>
