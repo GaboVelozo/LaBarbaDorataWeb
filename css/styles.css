@@ -546,7 +546,9 @@ section ul {
 .carouselContainer .align-items-center {
     align-items: center; */
 /* MEDIA QUERYS */
-
+.serviciosClass{
+    flex-direction: row;
+}
 
 @media(max-width:900px) {
 
@@ -603,6 +605,12 @@ section ul {
         flex-direction: column;
 
     }
+    .bg-text {
+        max-width: 900px;
+    }
+    .serviciosClass{
+        flex-direction: column;
+    }
 }
 
 @media(max-width:600px) {
@@ -655,5 +663,11 @@ section ul {
         to {
             left: 100px;
         }
+    }
+    .bg-text {
+        max-width: 600px;
+    }
+    .serviciosClass{
+        flex-direction: column;
     }
 }
