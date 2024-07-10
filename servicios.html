@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios - La Barba Dorata</title>
-    <!-- https://fontawesome.com -->
+    <title>Acerca de Nosotros - La Barba Dorata</title>
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -14,17 +13,65 @@
     <link rel="icon" href="/images/logo_barba-icono.ico" />
     <link rel="stylesheet" href="css/styles.css" />
     <style>
-        h2,
-        h1 {
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .bg-image {
+            /* The image used */
+            background-image: url("./images/logo/Designer-removebg-preview.png");
+
+            /* Add the blur effect */
+            filter: blur(8px);
+            -webkit-filter: blur(8px);
+
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+        }
+
+        .bg-text {
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/opacity/see-through */
             color: white;
-            /* text-shadow: 1px 1px 2px orange, 0 0 1em blue, 0 0 0.2em black; */
+            font-weight: bold;
+            border: 3px solid #f1f1f1;
+            position: relative;
+            margin: 0 auto;
+            /* margin-top: -50px; */
+            z-index: 2;
+            width: 100%;
+            max-width: 1400px;
+            padding: 20px;
+            text-align: center;
+            max-height: calc(300vh - 100px);
+            overflow-y: auto;
+            /* top: 50px; */
         }
     </style>
 </head>
 
-<body style="background-color: black; color: white;">
+<body style="background-color: black">
     <header class="header">
-
         <div class="content-hamb">
             <div class="menu-hamb container-hamb">
                 <a href="index.html" class="logo-hamb animate__heartBeat"><img src="/images/logo_barba.png"
@@ -51,98 +98,96 @@
                     </ul>
                 </nav>
             </div>
-
         </div>
-
     </header>
 
-    <div>
+    <div class="bg-image"></div>
+
+    <div class="bg-text">
         <h1 style="margin-top: 50px; text-align: center;">Nuestros Servicios</h1>
         <div style="display: flex; flex-direction:row;">
 
-                <div style="padding: 20px;">
-                    <h2 style="font-size: 1.8em; margin-bottom: 10px; text-align: center;">Corte de Cabello</h2>
-                    <p style="margin-bottom: 10px;">Nuestro servicio de corte de cabello está diseñado para brindarte
-                        una experiencia de peluquería excepcional, donde tus necesidades y preferencias son nuestra
-                        prioridad.</p>
-                    <p style="margin-bottom: 10px;"><strong>Estilos de Cortes:</strong> Ofrecemos una amplia variedad de
-                        cortes de cabello, desde clásicos hasta tendencias modernas.</p>
-                    <p style="margin-bottom: 10px;"><strong>Tiempo Estimado:</strong> Entre 30 y 45 minutos por sesión.
-                    </p>
-                    <p style="margin-bottom: 20px;"><strong>Precio:</strong> $5500 pesos.</p>
-                    <div style="display: flex; justify-content: center; align-items: center; gap: 15px;">
-                        <a href="Galeria.html#divCortes" style="color:#FFD700;">
-                            <i class="fa-solid fa-image fa-2x"></i>
-                        </a>
-                        <a href="Galeria.html#divCortes"
-                            style="text-decoration: none; color: #FFD700; font-weight: bold; font-size: 1.1em;;">
-                            <span style="color: white;">Mira nuestros trabajos haciendo click aqui</span>
-                        </a>
-                    </div>
+            <div style="padding: 20px;">
+                <h2 style="font-size: 1.8em; margin-bottom: 10px; text-align: center;">Corte de Cabello</h2>
+                <p style="margin-bottom: 10px;">Nuestro servicio de corte de cabello está diseñado para brindarte
+                    una experiencia de peluquería excepcional, donde tus necesidades y preferencias son nuestra
+                    prioridad.</p>
+                <p style="margin-bottom: 10px;"><strong>Estilos de Cortes:</strong> Ofrecemos una amplia variedad de
+                    cortes de cabello, desde clásicos hasta tendencias modernas.</p>
+                <p style="margin-bottom: 10px;"><strong>Tiempo Estimado:</strong> Entre 30 y 45 minutos por sesión.
+                </p>
+                <p style="margin-bottom: 20px;"><strong>Precio:</strong> $5500 pesos.</p>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 15px;">
+                    <a href="Galeria.html#divCortes" style="color:#FFD700;">
+                        <i class="fa-solid fa-image fa-2x"></i>
+                    </a>
+                    <a href="Galeria.html#divCortes"
+                        style="text-decoration: none; color: #FFD700; font-weight: bold; font-size: 1.1em;;">
+                        <span style="color: white;">Mira nuestros trabajos haciendo click aqui</span>
+                    </a>
                 </div>
-                <div style="padding: 20px;">
-                    <h2 style="font-size: 1.8em; margin-bottom: 10px; text-align: center;">Recorte de barba</h2>
-                    <p>Nuestro servicio de recorte de barba es una experiencia cuidadosamente diseñada para hombres que
-                        desean mantener su barba impecable y bien cuidada.</p>
-                    <p><strong>Estilo de Recorte:</strong> Ofrecemos una amplia gama de estilos, desde clásicos hasta
-                        modernos y desenfadados.</p>
-                    <p><strong>Tiempo Estimado:</strong> Entre 20 y 30 minutos por sesión.</p>
-                    <p><strong>Precio:</strong> $3500 pesos.</p>
-                    <div style="display: flex; justify-content: center; align-items: center; gap: 15px;">
+            </div>
+            <div style="padding: 20px;">
+                <h2 style="font-size: 1.8em; margin-bottom: 10px; text-align: center;">Recorte de barba</h2>
+                <p>Nuestro servicio de recorte de barba es una experiencia cuidadosamente diseñada para hombres que
+                    desean mantener su barba impecable y bien cuidada.</p>
+                <p><strong>Estilo de Recorte:</strong> Ofrecemos una amplia gama de estilos, desde clásicos hasta
+                    modernos y desenfadados.</p>
+                <p><strong>Tiempo Estimado:</strong> Entre 20 y 30 minutos por sesión.</p>
+                <p><strong>Precio:</strong> $3500 pesos.</p>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 15px;">
 
-                        <a href="Galeria.html#divBarba" style="color: #FFD700;">
-                            <i class="fa-solid fa-image fa-2x"></i>
-                        </a>
+                    <a href="Galeria.html#divBarba" style="color: #FFD700;">
+                        <i class="fa-solid fa-image fa-2x"></i>
+                    </a>
 
-                        <a href="Galeria.html#divBarba"
-                            style="text-decoration: none; color: #FFD700; font-weight: bold; font-size: 1.1em;">
-                            <span style="color: white;">Mira nuestros trabajos haciendo click aqui</span>
-                        </a>
-                    </div>
+                    <a href="Galeria.html#divBarba"
+                        style="text-decoration: none; color: #FFD700; font-weight: bold; font-size: 1.1em;">
+                        <span style="color: white;">Mira nuestros trabajos haciendo click aqui</span>
+                    </a>
                 </div>
-                <div style="padding: 20px;">
-                    <h2 style="font-size: 1.8em; margin-bottom: 10px; text-align: center;">Afeitado</h2>
-                    <p>Nuestro servicio de afeitado te ofrece una experiencia de lujo que combina la tradición del
-                        afeitado
-                        clásico con productos de alta calidad y técnicas modernas.</p>
-                    <p><strong>Tipo de Afeitado:</strong> Ofrecemos afeitados tradicionales con navaja o afeitados
-                        modernos
-                        con máquina.</p>
-                    <p><strong>Tiempo Estimado:</strong> Entre 20 y 30 minutos por sesión.</p>
-                    <p><strong>Precio:</strong> $4000 pesos.</p>
-                    <div style="display: flex; justify-content: center; align-items: center; gap: 15px;">
-                        <a href="Galeria.html#divColoracion" style="color: #FFD700;">
-                            <i class="fa-solid fa-image fa-2x"></i>
-                        </a>
-                        <a href="servicios.html"
-                            style="text-decoration: none; color: #FFD700; font-weight: bold; font-size: 1.1em;">
-                            <span style="color:white;">Mira nuestros trabajos haciendo click aqui</span>
-                        </a>
-                    </div>
+            </div>
+            <div style="padding: 20px;">
+                <h2 style="font-size: 1.8em; margin-bottom: 10px; text-align: center;">Afeitado</h2>
+                <p>Nuestro servicio de afeitado te ofrece una experiencia de lujo que combina la tradición del
+                    afeitado
+                    clásico con productos de alta calidad y técnicas modernas.</p>
+                <p><strong>Tipo de Afeitado:</strong> Ofrecemos afeitados tradicionales con navaja o afeitados
+                    modernos
+                    con máquina.</p>
+                <p><strong>Tiempo Estimado:</strong> Entre 20 y 30 minutos por sesión.</p>
+                <p><strong>Precio:</strong> $4000 pesos.</p>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 15px;">
+                    <a href="Galeria.html#divColoracion" style="color: #FFD700;">
+                        <i class="fa-solid fa-image fa-2x"></i>
+                    </a>
+                    <a href="servicios.html"
+                        style="text-decoration: none; color: #FFD700; font-weight: bold; font-size: 1.1em;">
+                        <span style="color:white;">Mira nuestros trabajos haciendo click aqui</span>
+                    </a>
                 </div>
+            </div>
         </div>
     </div>
 
-    <footer class="footer">
+
+    <footer class="footer" style="position: relative;">
         <ul class="social-icon">
             <li class="icon-elem">
                 <a href="https://www.instagram.com/" target="_blank" class="icon">
                     <i class="fa-brands fa-instagram fa-2xl"></i>
                 </a>
             </li>
-
             <li class="icon-elem">
                 <a href="https://www.facebook.com/" target="_blank" class="icon">
                     <i class="fa-brands fa-square-facebook fa-2xl"></i>
                 </a>
             </li>
-
             <li class="icon-elem">
                 <a href="https://www.tiktok.com/es/" target="_blank" class="icon">
                     <i class="fa-brands fa-tiktok fa-2xl"></i>
                 </a>
             </li>
-
             <li class="icon-elem">
                 <a href="https://web.whatsapp.com/" target="_blank" class="icon">
                     <i class="fa-brands fa-whatsapp fa-2xl"></i>
@@ -153,7 +198,6 @@
         <div class="derechos">
             <p>&copy; 2024 La Barba Dorata. Todos los derechos reservados.</p>
         </div>
-
     </footer>
 </body>
 

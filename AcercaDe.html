@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -12,12 +12,66 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="icon" href="/images/logo_barba-icono.ico" />
     <link rel="stylesheet" href="css/styles.css" />
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
+        * {
+            box-sizing: border-box;
+        }
+
+        .bg-image {
+            /* The image used */
+            background-image: url("./images/logo/Designer-removebg-preview.png");
+
+            /* Add the blur effect */
+            filter: blur(8px);
+            -webkit-filter: blur(8px);
+
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+        }
+
+        .bg-text {
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/opacity/see-through */
+            color: white;
+            font-weight: bold;
+            border: 3px solid #f1f1f1;
+            position: relative;
+            margin: 0 auto;
+            /* margin-top: -50px; */
+            z-index: 2;
+            width: 100%;
+            max-width: 1400px;
+            padding: 20px;
+            text-align: center;
+            max-height: calc(300vh - 100px);
+            overflow-y: auto;
+            /* top: 50px; */
+        }
+    </style>
 </head>
 
-<body style="background-color: black; color: white; text-align: center;">
+<body style="background-color: black">
     <header class="header">
-
         <div class="content-hamb">
             <div class="menu-hamb container-hamb">
                 <a href="index.html" class="logo-hamb animate__heartBeat"><img src="/images/logo_barba.png"
@@ -44,127 +98,182 @@
                     </ul>
                 </nav>
             </div>
-
         </div>
-
     </header>
 
+    <div class="bg-image"></div>
 
-    <div style="margin-top: 50px; padding: 20px;">
+    <div class="bg-text">
         <h1>Bienvenidos a La Barba Dorata!</h1>
         <br>
         <br>
-        <div style="text-align: center; width: 70em; margin:0 auto">
+        <div style="text-align: center; width: 70em; margin:0 auto;">
             <p>La Barba Dorata es mucho más que un simple lugar en La Plata; es tu nuevo destino para experimentar los
                 mejores servicios de barbería con un toque excepcional de amabilidad y profesionalismo. Nuestro equipo
                 de barberos está formado por verdaderos expertos en su campo, dedicados a ofrecerte cortes de cabello,
                 recortes de barba y afeitados de la más alta calidad.</p>
-
             <p>Nos enorgullece garantizar precios asequibles sin comprometer la excelencia en nuestro servicio. En La
                 Barba Dorata, creemos firmemente que todos merecen lucir y sentirse bien consigo mismos, y por eso
                 estamos comprometidos a ayudarte a lograrlo con resultados que superen tus expectativas.</p>
-
             <p>Ya sea que busques un cambio radical de estilo o simplemente necesites un mantenimiento básico, te
                 invitamos cordialmente a visitar La Barba Dorata y descubrir por ti mismo la diferencia que podemos
                 hacer en tu apariencia y confianza.</p>
-            <br>
         </div>
+        <br>
         <div style="display: flex; flex-direction: row;  justify-content: space-between;">
             <div style="text-align: left; width: 40em;">
                 <h3>Nuestra Misión</h3>
                 <br>
                 <p>Nuestra Misión
-                    En La Barba Dorata, nuestra misión es proporcionar una experiencia de barbería excepcional, donde la
-                    calidad, la amabilidad y la profesionalidad sean nuestros pilares fundamentales. Nos esforzamos por
-                    superar las expectativas de nuestros clientes y dejar una impresión duradera en cada persona que
-                    pase por nuestras puertas. Creemos firmemente en la importancia de la atención personalizada. Cada
-                    cliente es único, y nos dedicamos a entender y satisfacer sus necesidades específicas. Ya sea que
-                    busques un corte de cabello moderno, un estilo clásico o un recorte de barba impecable, nuestros
-                    barberos están altamente capacitados para ofrecerte resultados que realcen tu mejor versión.</p>
+                    En La Barba Dorata, nuestra misión es proporcionar una experiencia de barbería excepcional,
+                    donde la
+                    calidad, la amabilidad y la profesionalidad sean nuestros pilares fundamentales. Nos
+                    esforzamos
+                    por
+                    superar las expectativas de nuestros clientes y dejar una impresión duradera en cada persona
+                    que
+                    pase por nuestras puertas. Creemos firmemente en la importancia de la atención
+                    personalizada.
+                    Cada
+                    cliente es único, y nos dedicamos a entender y satisfacer sus necesidades específicas. Ya
+                    sea
+                    que
+                    busques un corte de cabello moderno, un estilo clásico o un recorte de barba impecable,
+                    nuestros
+                    barberos están altamente capacitados para ofrecerte resultados que realcen tu mejor versión.
+                </p>
 
-                <p> Además de nuestra pericia técnica, nos comprometemos a crear un ambiente acogedor y relajante. Desde
-                    el momento en que entras en nuestro salón, te recibirás con una sonrisa y un trato amable. Queremos
-                    que cada visita a La Barba Dorata sea una experiencia placentera y revitalizante. Valoramos la
-                    calidad en todo lo que hacemos. Utilizamos productos de primera línea y las técnicas más avanzadas
-                    para asegurar que cada servicio cumpla con los más altos estándares. No sólo queremos que te veas
-                    bien al salir de nuestro salón, sino que también te sientas bien, sabiendo que has recibido un
+                <p> Además de nuestra pericia técnica, nos comprometemos a crear un ambiente acogedor y
+                    relajante.
+                    Desde
+                    el momento en que entras en nuestro salón, te recibirás con una sonrisa y un trato amable.
+                    Queremos
+                    que cada visita a La Barba Dorata sea una experiencia placentera y revitalizante. Valoramos
+                    la
+                    calidad en todo lo que hacemos. Utilizamos productos de primera línea y las técnicas más
+                    avanzadas
+                    para asegurar que cada servicio cumpla con los más altos estándares. No sólo queremos que te
+                    veas
+                    bien al salir de nuestro salón, sino que también te sientas bien, sabiendo que has recibido
+                    un
                     servicio de primera categoría.</p>
 
-                <p> Nuestra profesionalidad se refleja en cada detalle de nuestro trabajo. Mantenemos un compromiso
-                    constante con la formación y el desarrollo, asegurándonos de estar al día con las últimas tendencias
-                    y métodos en la industria de la barbería. Este compromiso con la excelencia es lo que nos distingue
+                <p> Nuestra profesionalidad se refleja en cada detalle de nuestro trabajo. Mantenemos un
+                    compromiso
+                    constante con la formación y el desarrollo, asegurándonos de estar al día con las últimas
+                    tendencias
+                    y métodos en la industria de la barbería. Este compromiso con la excelencia es lo que nos
+                    distingue
                     y nos permite ofrecer una experiencia verdaderamente excepcional a nuestros clientes.</p>
 
-                <p> Finalmente, entendemos la importancia de la comunidad y buscamos ser un pilar en nuestro entorno
-                    local. Nos involucramos en iniciativas comunitarias y apoyamos eventos locales, contribuyendo
-                    activamente al bienestar de nuestra comunidad. En La Barba Dorata, estamos dedicados a ofrecer más
-                    que un simple corte de cabello o un recorte de barba; estamos comprometidos a proporcionar una
-                    experiencia integral que te haga sentir especial y valorado. ¡Te invitamos a visitarnos y descubrir
+                <p> Finalmente, entendemos la importancia de la comunidad y buscamos ser un pilar en nuestro
+                    entorno
+                    local. Nos involucramos en iniciativas comunitarias y apoyamos eventos locales,
+                    contribuyendo
+                    activamente al bienestar de nuestra comunidad. En La Barba Dorata, estamos dedicados a
+                    ofrecer
+                    más
+                    que un simple corte de cabello o un recorte de barba; estamos comprometidos a proporcionar
+                    una
+                    experiencia integral que te haga sentir especial y valorado. ¡Te invitamos a visitarnos y
+                    descubrir
                     la diferencia que nuestra dedicación y pasión pueden hacer!</p>
             </div>
             <br>
-
             <div style="text-align:left; width: 40em;">
                 <h3>Nuestros Valores</h3>
                 <br>
                 <ul>
-                    <li><strong style="color: #FFD700;">Calidad:</strong> Nos comprometemos a utilizar productos de alta
-                        calidad y técnicas profesionales en cada servicio que ofrecemos. Creemos que la excelencia
-                        comienza con los materiales y métodos que empleamos. Por ello, seleccionamos cuidadosamente cada
-                        producto que utilizamos en nuestros servicios, asegurándonos de que sean seguros, efectivos y de
-                        primera categoría. Esta dedicación a la calidad nos permite ofrecer resultados excepcionales que
+                    <li><strong style="color: #FFD700;">Calidad:</strong> Nos comprometemos a utilizar productos
+                        de
+                        alta
+                        calidad y técnicas profesionales en cada servicio que ofrecemos. Creemos que la
+                        excelencia
+                        comienza con los materiales y métodos que empleamos. Por ello, seleccionamos
+                        cuidadosamente
+                        cada
+                        producto que utilizamos en nuestros servicios, asegurándonos de que sean seguros,
+                        efectivos
+                        y de
+                        primera categoría. Esta dedicación a la calidad nos permite ofrecer resultados
+                        excepcionales
+                        que
                         superan las expectativas de nuestros clientes.</li>
-                    <li><strong style="color: #FFD700;">Amabilidad:</strong> Valoramos la cortesía y el respeto hacia
-                        nuestros clientes, creando un ambiente acogedor y agradable en nuestro salón. Entendemos que una
-                        experiencia de barbería va más allá de un buen corte de cabello o un afeitado perfecto. Se trata
-                        también de cómo se siente cada cliente cuando está con nosotros. Por eso, nos esforzamos por
-                        tratar a todos con amabilidad y respeto, asegurando que cada visita sea un momento agradable y
+                    <li><strong style="color: #FFD700;">Amabilidad:</strong> Valoramos la cortesía y el respeto
+                        hacia
+                        nuestros clientes, creando un ambiente acogedor y agradable en nuestro salón. Entendemos
+                        que
+                        una
+                        experiencia de barbería va más allá de un buen corte de cabello o un afeitado perfecto.
+                        Se
+                        trata
+                        también de cómo se siente cada cliente cuando está con nosotros. Por eso, nos esforzamos
+                        por
+                        tratar a todos con amabilidad y respeto, asegurando que cada visita sea un momento
+                        agradable
+                        y
                         relajante.</li>
-                    <li><strong style="color: #FFD700;">Profesionalismo:</strong> Nuestro equipo está formado por
-                        barberos expertos y dedicados, comprometidos con la excelencia en su trabajo. La formación
-                        continua y el desarrollo profesional son fundamentales para nosotros. Nos aseguramos de que
+                    <li><strong style="color: #FFD700;">Profesionalismo:</strong> Nuestro equipo está formado
+                        por
+                        barberos expertos y dedicados, comprometidos con la excelencia en su trabajo. La
+                        formación
+                        continua y el desarrollo profesional son fundamentales para nosotros. Nos aseguramos de
+                        que
                         nuestros barberos estén siempre actualizados con las últimas tendencias y técnicas en la
-                        industria de la barbería. Este compromiso con el profesionalismo garantiza que cada cliente
+                        industria de la barbería. Este compromiso con el profesionalismo garantiza que cada
+                        cliente
                         reciba un servicio de alta calidad, realizado con habilidad y precisión.</li>
-                    <li><strong style="color: #FFD700;">Innovación:</strong> Estamos siempre buscando nuevas tendencias
-                        y técnicas para mejorar nuestros servicios y satisfacer las necesidades cambiantes de nuestros
-                        clientes. La industria de la barbería está en constante evolución, y nosotros nos esforzamos por
-                        estar a la vanguardia. Participamos en cursos y seminarios, investigamos nuevas tecnologías y
-                        estilos, y adaptamos nuestros servicios para incorporar las últimas innovaciones. De esta
-                        manera, podemos ofrecer a nuestros clientes opciones modernas y frescas, manteniendo nuestra
+                    <li><strong style="color: #FFD700;">Innovación:</strong> Estamos siempre buscando nuevas
+                        tendencias
+                        y técnicas para mejorar nuestros servicios y satisfacer las necesidades cambiantes de
+                        nuestros
+                        clientes. La industria de la barbería está en constante evolución, y nosotros nos
+                        esforzamos
+                        por
+                        estar a la vanguardia. Participamos en cursos y seminarios, investigamos nuevas
+                        tecnologías
+                        y
+                        estilos, y adaptamos nuestros servicios para incorporar las últimas innovaciones. De
+                        esta
+                        manera, podemos ofrecer a nuestros clientes opciones modernas y frescas, manteniendo
+                        nuestra
                         oferta siempre relevante y atractiva.</li>
-                    <li><strong style="color: #FFD700;">Comunidad:</strong> Nos esforzamos por ser un miembro activo de
-                        nuestra comunidad, apoyando iniciativas locales y contribuyendo al bienestar de quienes nos
-                        rodean. Creemos en el poder de la comunidad y en la importancia de retribuir. Participamos en
-                        eventos locales, apoyamos a negocios vecinos y colaboramos con organizaciones benéficas. Nuestro
-                        objetivo es no solo ser un lugar de referencia para excelentes servicios de barbería, sino
+                    <li><strong style="color: #FFD700;">Comunidad:</strong> Nos esforzamos por ser un miembro
+                        activo
+                        de
+                        nuestra comunidad, apoyando iniciativas locales y contribuyendo al bienestar de quienes
+                        nos
+                        rodean. Creemos en el poder de la comunidad y en la importancia de retribuir.
+                        Participamos
+                        en
+                        eventos locales, apoyamos a negocios vecinos y colaboramos con organizaciones benéficas.
+                        Nuestro
+                        objetivo es no solo ser un lugar de referencia para excelentes servicios de barbería,
+                        sino
                         también un pilar de apoyo y desarrollo dentro de nuestra comunidad.</li>
                 </ul>
             </div>
         </div>
     </div>
-    </div>
 
-    <footer class="footer">
+
+    <footer class="footer" style="position: relative;">
         <ul class="social-icon">
             <li class="icon-elem">
                 <a href="https://www.instagram.com/" target="_blank" class="icon">
                     <i class="fa-brands fa-instagram fa-2xl"></i>
                 </a>
             </li>
-
             <li class="icon-elem">
                 <a href="https://www.facebook.com/" target="_blank" class="icon">
                     <i class="fa-brands fa-square-facebook fa-2xl"></i>
                 </a>
             </li>
-
             <li class="icon-elem">
                 <a href="https://www.tiktok.com/es/" target="_blank" class="icon">
                     <i class="fa-brands fa-tiktok fa-2xl"></i>
                 </a>
             </li>
-
             <li class="icon-elem">
                 <a href="https://web.whatsapp.com/" target="_blank" class="icon">
                     <i class="fa-brands fa-whatsapp fa-2xl"></i>
@@ -175,7 +284,6 @@
         <div class="derechos">
             <p>&copy; 2024 La Barba Dorata. Todos los derechos reservados.</p>
         </div>
-
     </footer>
 </body>
 
