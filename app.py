@@ -18,7 +18,7 @@ from dateutil import parser
 # No es necesario instalar, es parte del sistema standard de Python
 import os
 import time
-import datosconexion as bd
+import datosConfiguraciones as config
 #--------------------------------------------------------------------
 
 app = Flask(__name__)
@@ -59,6 +59,24 @@ class Turnos:
         # Cerrar el cursor inicial y abrir uno nuevo con el parámetro dictionary=True
         self.cursor.close()
         self.cursor = self.conn.cursor(dictionary=True)
+
+    # def conectar(self):
+    #     try:
+    #         self.conn = mysql.connector.connect(
+    #             host=host,
+    #             user=user,
+    #             password=password
+    #         )
+    #         self.cursor = self.conn.cursor()
+    #     except:
+    #       print('An exception occurred')
+    
+    # def desconectar(self):
+    #     try:
+    #       print(x)
+    #     except:
+    #       print('An exception occurred')
+
 
     def listar_turnos(self):
         self.cursor.execute("SELECT * FROM Turnos")
@@ -121,17 +139,14 @@ class Turnos:
 # Cuerpo del programa
 #--------------------------------------------------------------------
 # Crear una instancia de la clase CatalogoCatalogo
-# LOCAL SETTINGS
-#turnosCatalogo = Turnos(host=bd.host, user=bd.user, password=bd.password, database=bd.database)
-# PYTHONANYWHERE SETTINGS
-turnosCatalogo = Turnos(host='gabonline.mysql.pythonanywhere-services.com', 
-                        user='gabonline', password='rootroot', database='gabonline$miapp')
+# Uso de archivo de configuraciones
+turnosCatalogo = Turnos(host=config.host, 
+                        user=config.user,
+                        password=config.password, 
+                        database=config.database)
 
 # Carpeta para guardar las imagenes
-# LOCAL SETTINGS
-# ruta_destino = './static/imagenes/'
-# PYTHONANYWHERE SETTINGS
-ruta_destino = '/home/gabonline/mysite/static/imagenes'
+ruta_destino = config.rutaDestino
 
 @app.route("/turnos", methods=["GET"])
 def listar_turnos():
