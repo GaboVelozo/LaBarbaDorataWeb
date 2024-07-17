@@ -4,18 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="js/webScript.js"></script>
+    <script src="js/webScript.js"></script>
     <title>Turnos - La Barba Dorata</title>
     <!-- BOOTSTRAP -->
-    <link rel="stylesheet" type="text/css" href="/css/jquery.datetimepicker.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/jquery.datetimepicker.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="icon" href="/images/logo_barba-icono.ico" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="/images/logo_barba-icono.ico">
+    <link rel="stylesheet" href="css/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="/js/jquery.datetimepicker.full.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/turnosScript.js"></script>
+    <script src="js/turnosScript.js"></script>
     <style>
         form{
             background-color: black;
@@ -35,11 +35,11 @@
             <h1 style="color: white;">Datos del Turnos</h1>
             <form id="formulario-Alta" enctype="multipart/form-data">
                 <!-- onsubmit="return validateForm()" method="POST" -->
-                <label for="nombre"">Nombre:</label>
+                <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
                 <div id="NombreError" class="errorDiv" hidden>Por favor ingrese su nombre de al menos 3 letras</div>
 
-                <label for="apellido"">Apellido:</label>
+                <label for="apellido">Apellido:</label>
                 <input type="text" id="apellido" name="apellido" placeholder="Ingrese su apellido" required>
                 <div id="ApellidoError" class="errorDiv"></div>
 
@@ -82,8 +82,7 @@
     </div>
 
     <footer id="footer" class="footer" style="position: relative;"></footer>
-</body>
-</html>
+
 
 <script>
     jQuery.datetimepicker.setLocale('es');
@@ -154,3 +153,5 @@
     });
 </script>
 
+</body>
+</html>

@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="js/webScript.js"></script>
+    <script src="js/webScript.js"></script>
     <title>Modificar Turno - La Barba Dorata</title>
     <!-- BOOTSTRAP -->
-    <link rel="stylesheet" type="text/css" href="/css/jquery.datetimepicker.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/jquery.datetimepicker.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="icon" href="/images/logo_barba-icono.ico" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="/images/logo_barba-icono.ico">
+    <link rel="stylesheet" href="css/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="/js/jquery.datetimepicker.full.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     
-    <script type="text/javascript" src="js/turnosScript.js"></script>
+    <script src="js/turnosScript.js"></script>
     <style>
         form{
             background-color: black;
@@ -80,16 +80,16 @@
                     </div>
                     <br>
 
-                    <label for="datetimepickerModificar"style="color: white;"> Fecha y hora del turno</label>
+                    <label for="datetimepickerModificar" style="color: white;"> Fecha y hora del turno</label>
                     <input id="datetimepickerModificar" name="datetimepickerModificar" type="text"
                         style="background-color: #FFD700; font-weight: bold; width: 30%;"
                         placeholder="Click aqui para seleccionar un turno" readonly>
               
                     <br><br><br>
                     <!-- Imagen actual del turno - Debe comentarse al subirse al servidor-->
-                    <img id="imagen-actual" style="max-width: 200px; display: none;">
+                    <img id="imagen-actual" style="max-width: 200px; display: none;" src="" alt="Imagen actual del turno">
                     <!-- Vista previa de la nueva imagen seleccionada -->
-                    <img id="imagen-vista-previa" style="max-width: 200px; display: none;">
+                    <img id="imagen-vista-previa" style="max-width: 200px; display: none;" src="" alt="Vista previa nueva imagen">
 
                     <!-- Input para nueva imagen -->
                     <label for="nuevaImagen">Nueva Imagen:</label>
@@ -113,13 +113,6 @@
 
 
     <footer id="footer" class="footer"></footer>
-
-   
-
-</body>
-
-
-</html>
 
 <script>
     jQuery.datetimepicker.setLocale('es');
@@ -176,4 +169,7 @@
     }
 </script>
 
+</body>
 
+
+</html>

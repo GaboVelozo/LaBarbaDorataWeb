@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="js/webScript.js"></script>
+    <script src="js/webScript.js"></script>
     <title>Servicios - La Barba Dorata</title>
     <!-- https://fontawesome.com -->
     <!-- BOOTSTRAP -->
@@ -12,8 +12,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="icon" href="/images/logo_barba-icono.ico" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="/images/logo_barba-icono.ico">
+    <link rel="stylesheet" href="css/styles.css">
 
     <style>
         * {
@@ -65,6 +65,40 @@
             height: 500px;
             /* top: 50px; */
         }
+
+        .turnos-list {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #1d1a39;
+            border: 1px solid lightslategray;
+            border-radius: 5px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+
+        .turnos-list li {
+            text-align: center;
+        }
+
+        .turnos-list button {
+            width: 40%;
+            padding: 8px;
+            margin: 4px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #FFD700;
+            color: black;
+            font-size: larger;
+
+        }
+
+        .turnos-list button:hover {
+            background-color: #fafafa;
+            color: black;
+
+        }
     </style>
 </head>
 
@@ -74,36 +108,33 @@
 
     <div id="divUnderHeader" style="margin-top: 60px;" class="bg-text">
 
-        <div id="carouselContainer" class="row d-flex justify-content-center align-items-center" style="margin-top: 13%">
-            <div class="col-md-4 " style="color:white; text-align: center; text-shadow: black 1px;">
+        <div class="row d-flex justify-content-center align-items-center" style="margin-top: 13%">
+            <div class="col-md-4 " style="color:white; text-align: center; text-shadow: black 0 1px;">
                 <h1> Gestión de Turnos</h1>
             </div>
             <br>
-            <div class="col-md-8" id="carouselContainer">
+            <div class="col-md-8">
 
                 <ul class="turnos-list">
                     <li>
-                        <a href="AltaTurno.html">
-                            <button type="button" class="btn btn-primary" style="white-space: normal; min-width:max-content;">
-                                Alta de Turnos
-                            </button>
-                        </a>
+                        <button onclick="location.href='AltaTurno.html'" type="button" class="btn btn-primary"
+                            style="white-space: normal; min-width:max-content;">
+                            Alta de Turnos
+                        </button>
                     </li>
                     <br>
                     <li>
-                        <a href="modificarTurno.html" style="">
-                            <button type="button" class="btn btn-primary" style="margin: auto; min-width:max-content;">
-                                Modificacion de Turnos
-                            </button>
-                        </a>
+                        <button onclick="location.href='modificarTurno.html'" type="button" class="btn btn-primary"
+                            style="margin: auto; min-width:max-content;">
+                            Modificacion de Turnos
+                        </button>
                     </li>
                     <br>
                     <li>
-                        <a href="listado.html">
-                            <button type="button" class="btn btn-primary" style="margin: auto; min-width:max-content;">
-                                Listar / Eliminar Turnos
-                            </button>
-                        </a>
+                        <button onclick="location.href='listado.html'" type="button" class="btn btn-primary"
+                            style="margin: auto; min-width:max-content;">
+                            Listar / Eliminar Turnos
+                        </button>
                     </li>
                 </ul>
 
@@ -115,42 +146,8 @@
 
 
     <footer id="footer" class="footer" style="position: relative;"></footer>
+
+
 </body>
-
-<style>
-    .turnos-list {
-        max-width: 100%;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #1d1a39;
-        border: 1px solid lightslategray;
-        border-radius: 5px;
-        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-        border-radius: 10px;
-    }
-
-    .turnos-list li {
-        text-align: center;
-    }
-
-    .turnos-list button {
-        width: 40%;
-        padding: 8px;
-        margin: 4px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        background-color: #FFD700;
-        color: black;
-        font-size: larger;
-
-    }
-
-    .turnos-list button:hover {
-        background-color: #fafafa;
-        color: black;
-
-    }
-</style>
 
 </html>
