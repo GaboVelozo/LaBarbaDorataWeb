@@ -1,8 +1,9 @@
 
 // LOCAL SETTINGS
-// const URL = "http://127.0.0.1:5000/"
+const URL = "http://127.0.0.1:5000/"
 // PYTHONANYWHERE SETTINGS
-const URL = "https://gabonline.pythonanywhere.com/"
+//const URL = "https://gabonline.pythonanywhere.com/"
+
 // Variables de estado para controlar la visibilidad y los datos del formulario
 let turnoId = '';
 let nombre = '';
@@ -88,11 +89,14 @@ function obtenerListaTurnos() {
         let fila = document.createElement('tr'); //Crea una nueva fila de tabla (<tr>) para cada turno.
         fila.innerHTML = `
                     <th scope="row" style="color:white;">${turno.TurnoID}</th>
-                    <td>${turno.Nombre}</td>
-                    <td>${turno.Apellido}</td>
-                    <td>${turno.Telefono}</td>
-                    <td>${turno.Email}</td>
+                    <td>${turno.ClienteNombre}</td>
+                    <td>${turno.ClienteApellido}</td>
+                    <td>${turno.ClienteTelefono}</td>
+                    <td>${turno.ClienteEmail}</td>
                     <td>${turno.FechaHora}</td>
+                    <td>${turno.Estado}</td>
+                    <td>${turno.ServicioNombre}</td>
+                    <td>${turno.ServicioDuracion}'</td>
                     <td align="center">${turno.Mensaje}</td>
                     <td><img src='${URL}static/imagenes/${turno.Imagen_url}' 
                         title="Click para agrandar" 
@@ -142,7 +146,7 @@ function eliminarTurno(turnoId) {
 }
 
 
-//MODIFICAION DE TURNOS
+//MODIFICACION DE TURNOS
 // Se ejecuta cuando se envía el formulario de consulta. Realiza una solicitud GET a la API y obtiene los datos del turno correspondiente al código ingresado.
 function obtenerTurno(event) {
   event.preventDefault();
@@ -156,14 +160,15 @@ function obtenerTurno(event) {
       }
     })
     .then(data => {
-      nombre = data.Nombre;
-      apellido = data.Apellido;
-      telefono = data.Telefono;
-      email = data.Email;
-      mensaje = data.Mensaje;
-      fecha = data.FechaHora;
+      console.log(data);
+      nombre = data[0].ClienteNombre;
+      apellido = data[0].ClienteApellido;
+      telefono = data[0].ClienteTelefono;
+      email = data[0].ClienteEmail;
+      mensaje = data[0].Mensaje;
+      fecha = data[0].FechaHora;
 
-      imagen_url = data.Imagen_url;
+      imagen_url = data[0].Imagen_url;
       mostrarDatosTurno = true; //Activa la vista del segundo formulario
       mostrarFormulario();
     })

@@ -13,7 +13,8 @@ CREATE TABLE Barberos (
     BarberoID INT AUTO_INCREMENT PRIMARY KEY,
     Nombre VARCHAR(50) NOT NULL,
     Apellido VARCHAR(50) NOT NULL,
-    Telefono VARCHAR(15)
+    Telefono VARCHAR(15),
+    Email VARCHAR(50) NOT NULL
 );
 
 -- Tabla: Servicios
@@ -27,6 +28,8 @@ CREATE TABLE Servicios (
 -- Tabla: Turnos
 CREATE TABLE Turnos (
     TurnoID INT AUTO_INCREMENT PRIMARY KEY,
+    Imagen_url VARCHAR(255),
+    Mensaje TEXT,
     ClienteID INT NOT NULL,
     BarberoID INT NOT NULL,
     ServicioID INT NOT NULL,

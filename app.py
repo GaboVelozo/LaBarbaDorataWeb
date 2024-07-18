@@ -44,49 +44,97 @@ class Turnos:
                 self.conn.database = database
             else:
                 raise err
-        self.cursor.execute('''CREATE TABLE IF NOT EXISTS Turnos (
-            TurnoID INT AUTO_INCREMENT PRIMARY KEY,
-            Nombre VARCHAR(50) NOT NULL,
-            Apellido VARCHAR(50) NOT NULL,
-            Email VARCHAR(50) NOT NULL,
-            Imagen_url VARCHAR(255), -- Ruta o URL de la imagen
-            Telefono VARCHAR(15),
-            FechaHora DATETIME NOT NULL,
-            Mensaje TEXT
-        );''')
-        self.conn.commit()
+            
+        # Function to check if a table exists
+        def table_exists(table_name):
+            self.cursor.execute(f"SHOW TABLES LIKE '{table_name}'")
+            result = self.cursor.fetchone()
+            return result is not None
         
+        if not table_exists('Clientes'):
+            self.cursor.execute('''CREATE TABLE Clientes (
+                ClienteID INT AUTO_INCREMENT PRIMARY KEY,
+                Nombre VARCHAR(50) NOT NULL,
+                Apellido VARCHAR(50) NOT NULL,
+                Telefono VARCHAR(15),
+                Email VARCHAR(50) NOT NULL
+            );''')
+        
+        
+        if not table_exists('Barberos'):
+            self.cursor.execute('''CREATE TABLE Barberos (
+                BarberoID INT AUTO_INCREMENT PRIMARY KEY,
+                Nombre VARCHAR(50) NOT NULL,
+                Apellido VARCHAR(50) NOT NULL,
+                Telefono VARCHAR(15),
+                Email VARCHAR(50)                 
+            );''')
+
+        if not table_exists('Servicios'):
+            self.cursor.execute('''CREATE TABLE Servicios (
+                ServicioID INT AUTO_INCREMENT PRIMARY KEY,
+                Nombre VARCHAR(50) NOT NULL,
+                Duracion INT NOT NULL, -- Duración en minutos
+                Precio DECIMAL(10, 2) NOT NULL
+            );''')
+
+        if not table_exists('Turnos'):
+            self.cursor.execute('''CREATE TABLE Turnos (
+                TurnoID INT AUTO_INCREMENT PRIMARY KEY,
+                ClienteID INT NOT NULL,
+                BarberoID INT NOT NULL,
+                ServicioID INT NOT NULL,
+                FechaHora DATETIME NOT NULL,
+                Mensaje TEXT,
+                Imagen_url VARCHAR(255),
+                Estado ENUM('Programado', 'Completado', 'Cancelado') DEFAULT 'Programado',
+                FOREIGN KEY (ClienteID) REFERENCES Clientes(ClienteID),
+                FOREIGN KEY (BarberoID) REFERENCES Barberos(BarberoID),
+                FOREIGN KEY (ServicioID) REFERENCES Servicios(ServicioID)
+            );''')
+        self.conn.commit()
         # Cerrar el cursor inicial y abrir uno nuevo con el parámetro dictionary=True
         self.cursor.close()
         self.cursor = self.conn.cursor(dictionary=True)
 
-    # def conectar(self):
-    #     try:
-    #         self.conn = mysql.connector.connect(
-    #             host=host,
-    #             user=user,
-    #             password=password
-    #         )
-    #         self.cursor = self.conn.cursor()
-    #     except:
-    #       print('An exception occurred')
+    def conectar(self):
+        try:
+            self.conn = mysql.connector.connect(
+                host=config.host,
+                user=config.user,
+                password=config.password,
+                database=config.database
+            )
+            self.cursor = self.conn.cursor()
+        except:
+            print('Ocurrio un error abriendo la conexion')
     
-    # def desconectar(self):
-    #     try:
-    #       print(x)
-    #     except:
-    #       print('An exception occurred')
+    def desconectar(self):
+        try:
+            self.cursor.close()
+            self.conn.close()
+        except:
+            print('Ocurrio un error cerrndo la conexion')
 
 
     def listar_turnos(self):
+        self.conectar()
         self.cursor.execute("SELECT * FROM Turnos")
         turnos = self.cursor.fetchall()
+        print(turnos)
+        self.desconectar()
         return turnos
     
     def consultar_turno(self, TurnoID):
         # Consultamos un turno a partir de su código
         self.cursor.execute(f"SELECT * FROM Turnos WHERE TurnoID = {TurnoID}")
+
         return self.cursor.fetchone()
+    
+    def get_appointment_by_turno_id(self, turno_id):
+        self.cursor.callproc('GetAppointmentByTurnoID', [turno_id])
+        for result in self.cursor.stored_results():
+            return result.fetchall()
 
     def consultar_turno_por_Fecha(self, turno_fecha):
         # Consultamos un turno a partir de su código
@@ -134,6 +182,30 @@ class Turnos:
         self.cursor.execute(f"DELETE FROM TURNOS WHERE TurnoID = {TurnoID}")
         self.conn.commit()
         return self.cursor.rowcount > 0
+    
+    def get_all_appointments(self):
+        self.cursor.callproc('GetAllAppointments')
+        for result in self.cursor.stored_results():
+            return result.fetchall()
+
+    def get_appointments_by_client(self, client_id):
+        self.cursor.callproc('GetAppointmentsByClient', [client_id])
+        for result in self.cursor.stored_results():
+            for row in result.fetchall():
+                print(row)
+
+    def get_appointments_by_barber(self, barber_id):
+        self.cursor.callproc('GetAppointmentsByBarber', [barber_id])
+        for result in self.cursor.stored_results():
+            for row in result.fetchall():
+                print(row)
+
+    def get_appointments_by_date_range(self, start_date, end_date):
+        self.cursor.callproc('GetAppointmentsByDateRange', [start_date, end_date])
+        for result in self.cursor.stored_results():
+            for row in result.fetchall():
+                print(row)
+
 
 #--------------------------------------------------------------------
 # Cuerpo del programa
@@ -150,12 +222,13 @@ ruta_destino = config.rutaDestino
 
 @app.route("/turnos", methods=["GET"])
 def listar_turnos():
-    turnos = turnosCatalogo.listar_turnos()
+    turnos = turnosCatalogo.get_all_appointments()
+    # turnos = turnosCatalogo.listar_turnos()
     return jsonify(turnos)
 
 @app.route("/turnos/<int:turnoId>", methods=["GET"])
 def mostrar_turno(turnoId):
-    turno = turnosCatalogo.consultar_turno(turnoId)
+    turno = turnosCatalogo.get_appointment_by_turno_id(turnoId)
     if turno:
         return jsonify(turno)
     else:
